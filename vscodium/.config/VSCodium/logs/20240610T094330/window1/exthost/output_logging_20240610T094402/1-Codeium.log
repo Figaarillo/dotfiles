@@ -1,0 +1,135 @@
+2024-06-10 09:44:09.458 [INFO]: No proxy settings found
+2024-06-10 09:44:13.474 [INFO]: Creating manager directory: /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager
+2024-06-10 09:44:13.477 [INFO]: 42fbd33713da99925455bf873cebc46d05a18a4d not found, downloading language server
+2024-06-10 09:44:13.498 [INFO]: No proxy settings found
+2024-06-10 09:45:27.318 [INFO]: Language server started
+2024-06-10 09:45:27.708 [INFO]: [Language Server (stderr)]:
+I0610 09:45:27.706293 726961 main.go:558] Starting language server manager with pid 726961
+I0610 09:45:27.706461 726961 main.go:110] Manager acquired its lock file /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager/locks/manager.lock
+2024-06-10 09:45:27.709 [INFO]: [Language Server (stderr)]:
+I0610 09:45:27.708260 726961 main.go:248] Waiting for random port file in /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager/child_random_port_1718023527706611960_4571795223635143466 to be created
+2024-06-10 09:45:28.179 [INFO]: [Language Server (stderr)]:
+I0610 09:45:28.178164 726973 main.go:552] Starting language server process with pid 726973
+I0610 09:45:28.178317 726973 server.go:156] Language server will attempt to listen on host 127.0.0.1
+2024-06-10 09:45:28.182 [INFO]: [Language Server (stderr)]:
+I0610 09:45:28.178617 726973 server.go:163] Language server listening on random port at 41631
+I0610 09:45:28.178759 726973 proxy.go:113] proxyplease.proxy> No proxy provided. Attempting to infer from system.
+I0610 09:45:28.178796 726973 proxy.go:113] proxyplease.proxy> No proxy could be determined. Assuming a direct connection.
+I0610 09:45:28.178839 726973 client.go:589] [DEBUG] GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions
+2024-06-10 09:45:31.182 [INFO]: [Language Server (stderr)]:
+I0610 09:45:31.180766 726973 client.go:646] [ERR] GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions request failed: Get "https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+I0610 09:45:31.180923 726973 client.go:690] [DEBUG] GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions: retrying in 100ms (3 left)
+2024-06-10 09:45:33.180 [INFO]: [Language Server (stderr)]:
+I0610 09:45:33.178973 726973 client.go:646] [ERR] GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions request failed: Get "https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions": context deadline exceeded
+W0610 09:45:33.179084 726973 proxy.go:128] proxy failed to connect: GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions giving up after 2 attempt(s): context deadline exceeded
+I0610 09:45:33.179118 726973 unleash.go:90] Initializing Unleash
+2024-06-10 09:45:34.939 [INFO]: [Language Server (stderr)]:
+I0610 09:45:34.934561 726973 unleash.go:110] Successfully initialized Unleash
+2024-06-10 09:45:34.996 [INFO]: [Language Server (stderr)]:
+E0610 09:45:34.994474 726973 client_manager.go:270] Metadata is nil when trying to refresh user JWT
+2024-06-10 09:45:38.656 [INFO]: [Language Server (stderr)]:
+I0610 09:45:38.646565 726973 server.go:355] Successfully created API server client
+2024-06-10 09:45:38.783 [INFO]: [Language Server (stderr)]:
+I0610 09:45:38.782351 726973 server.go:364] Successfully initialized tokenizer
+2024-06-10 09:45:38.993 [INFO]: [Language Server (stderr)]:
+I0610 09:45:38.992783 726973 server.go:471] Local search is enabled, will index local files.
+I0610 09:45:38.992840 726973 server.go:475] Using 1 indexer workers
+2024-06-10 09:45:38.994 [INFO]: [Language Server (stderr)]:
+I0610 09:45:38.992924 726973 search_provider.go:193] Using database at /home/figarillo/.codeium/database/9c0694567290725d9dcba14ade58e297/2/MODEL_EMBED_6591
+2024-06-10 09:45:39.040 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.039809 726973 database.go:123] Bad db state detected: false
+2024-06-10 09:45:39.052 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.052003 726973 search_provider.go:207] Successfully created embedding search database in 59ms
+2024-06-10 09:45:39.055 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.052515 726973 search_provider.go:229] Successfully created and started indexer
+I0610 09:45:39.052580 726973 search_provider.go:255] Successfully created embedding search provider
+I0610 09:45:39.052607 726973 server.go:510] Successfully created exact search provider
+2024-06-10 09:45:39.064 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.063127 726973 server.go:540] Successfully created completion provider
+2024-06-10 09:45:39.069 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.064383 726973 server.go:589] Child process attempting to acquire lock file /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager/locks/child_lock_1718023527706794687_3699369473946899959
+I0610 09:45:39.064576 726973 server.go:597] Child process acquired lock file /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager/locks/child_lock_1718023527706794687_3699369473946899959
+2024-06-10 09:45:39.084 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.083521 726973 server.go:183] LSP listening on random port at 44347
+2024-06-10 09:45:39.086 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.084515 726973 web_server.go:239] Chat Web Server listening at ws://127.0.0.1:43115
+2024-06-10 09:45:39.097 [INFO]: [Language Server (stdout)]:
+44347
+2024-06-10 09:45:39.100 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.095251 726961 main.go:284] Language server manager found random server port 41631
+I0610 09:45:39.095564 726961 main.go:285] Language server manager found random lsp port 44347
+I0610 09:45:39.095736 726961 main.go:292] Language server manager attempting to connect to language server at 127.0.0.1:41631
+2024-06-10 09:45:39.182 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.182323 726961 main.go:163] Fixing language server port at 41631
+I0610 09:45:39.182359 726961 main.go:343] Language server manager successfully connected to new language server at 127.0.0.1:41631
+2024-06-10 09:45:39.281 [INFO]: Found language server running on port 41631
+2024-06-10 09:45:39.350 [INFO]: Downloaded binary: /home/figarillo/.codeium/bin/af6b6c543b224d348a8876f0c06245d9ea7929c5/ripgrep_linux_x64
+2024-06-10 09:45:39.374 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.373662 726973 rpcs_miscellaneous.go:118] Ripgrep available at /home/figarillo/.codeium/bin/af6b6c543b224d348a8876f0c06245d9ea7929c5/ripgrep_linux_x64
+2024-06-10 09:45:39.487 [INFO]: [Language Server (stderr)]:
+I0610 09:45:39.484307 726973 rpcs_miscellaneous.go:312] University version is up to date.
+2024-06-10 09:45:40.356 [ERROR]: Cannot read properties of undefined (reading 'codeLenses')
+2024-06-10 09:45:44.684 [INFO]: [Language Server (stderr)]:
+I0610 09:45:44.678059 726973 utils.go:163] Analyzing workspace files for /home/figarillo/Documents/Programacion/NodeJS/api-server-ts/
+2024-06-10 09:45:44.695 [INFO]: [Language Server (stderr)]:
+I0610 09:45:44.693713 726973 utils.go:223] Done analyzing workspace files for /home/figarillo/Documents/Programacion/NodeJS/api-server-ts/
+I0610 09:45:44.693775 726973 lsp.go:208] Found 59 files in workspace /home/figarillo/Documents/Programacion/NodeJS/api-server-ts/
+2024-06-10 09:45:44.709 [INFO]: [Language Server (stderr)]:
+I0610 09:45:44.703006 726973 lsp.go:232] Adding workspace listener for [0xc0014a7b60]
+I0610 09:45:44.703194 726973 indexing_listener.go:187] Add workspace event with uid: 1
+2024-06-10 09:45:44.728 [INFO]: [Language Server (stderr)]:
+I0610 09:45:44.727245 726973 lazy_model.go:29] Successfully created faiss index
+2024-06-10 09:45:47.703 [INFO]: [Language Server (stderr)]:
+I0610 09:45:47.700505 726973 indexing_listener.go:220] Done enqueue workspace with uid: 1
+2024-06-10 09:45:53.468 [INFO]: [Language Server (stderr)]:
+I0610 09:45:53.464584 726973 lazy_model.go:29] Successfully created faiss index
+2024-06-10 09:51:34.997 [INFO]: [Language Server (stderr)]:
+I0610 09:51:34.995501 726973 client_manager.go:248] Pruning inactive client for {42c68e58-c1ac-4ec7-8593-1b7af251a34f 0ca272ff-12a0-4804-87d5-afcbab62b118}
+2024-06-10 09:53:35.183 [INFO]: [Language Server (stderr)]:
+E0610 09:53:35.182032 726973 unleash.go:60] Unleash error: Get "https://unleash.codeium.com/api/client/features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-10 09:57:35.182 [INFO]: [Language Server (stderr)]:
+E0610 09:57:35.181213 726973 unleash.go:60] Unleash error: Get "https://unleash.codeium.com/api/client/features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-10 09:58:28.258 [INFO]: Completion request was cancelled by token (92.92ms)
+2024-06-10 09:58:28.637 [INFO]: Completion request was cancelled by token (52.2ms)
+2024-06-10 09:58:28.846 [INFO]: Completion request was cancelled by token (63.71ms)
+2024-06-10 09:58:29.495 [INFO]: Completion request was cancelled by token (363.46ms)
+2024-06-10 09:58:29.573 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:30.064 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:30.320 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:30.422 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:30.492 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:30.647 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:31.016 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:31.185 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:31.777 [INFO]: Completion request was cancelled by token (252.9ms)
+2024-06-10 09:58:32.784 [INFO]: Completion request was cancelled by token (926.82ms)
+2024-06-10 09:58:33.084 [INFO]: Completion request was cancelled by token (166.81ms)
+2024-06-10 09:58:33.314 [INFO]: Completion request was cancelled by token (130.12ms)
+2024-06-10 09:58:33.579 [INFO]: Completion request was cancelled by token (110.44ms)
+2024-06-10 09:58:34.167 [INFO]: Completion request was cancelled by token (291.4ms)
+2024-06-10 09:58:34.513 [INFO]: Completion request was cancelled by token (23.88ms)
+2024-06-10 09:58:35.063 [INFO]: Completion request was cancelled by token (387.45ms)
+2024-06-10 09:58:36.113 [INFO]: Completion request was cancelled by token (901.52ms)
+2024-06-10 09:58:37.641 [INFO]: Completion request was cancelled by token (1409.82ms)
+2024-06-10 09:58:37.927 [INFO]: Completion request was cancelled by token (183.23ms)
+2024-06-10 09:58:38.344 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:38.644 [INFO]: Completion request was cancelled by token (204.55ms)
+2024-06-10 09:58:38.874 [INFO]: Completion request was cancelled by token (107.25ms)
+2024-06-10 09:58:39.028 [INFO]: Completion request was cancelled by token (70.26ms)
+2024-06-10 09:58:39.435 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:39.993 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:40.913 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:41.291 [INFO]: Skipping completions because autocomplete is open
+2024-06-10 09:58:43.484 [INFO]: Completion request succeeded (569.72ms)
+2024-06-10 09:58:43.498 [INFO]: Generated 1 completion
+2024-06-10 09:58:43.506 [INFO]: provideInlineCompletionItems request succeeded (595.45ms)
+2024-06-10 09:58:43.819 [INFO]: Completion request succeeded (36.08ms)
+2024-06-10 09:58:43.823 [INFO]: Generated 1 completion
+2024-06-10 09:58:43.830 [INFO]: provideInlineCompletionItems request succeeded (47.89ms)
+2024-06-10 09:58:45.731 [INFO]: Completion request was cancelled by token (126.33ms)
+2024-06-10 09:58:45.799 [INFO]: Completion request was cancelled by token (35.72ms)
+2024-06-10 09:59:52.999 [INFO]: Disposing language server process
+2024-06-10 09:59:53.000 [INFO]: Deleting manager directory: /tmp/168a3a36-40bd-4068-b326-7306edc7d02c/codeium/manager
+2024-06-10 09:59:53.017 [INFO]: Successfully disposed language server
+2024-06-10 09:59:53.157 [INFO]: [Language Server (stderr)]:
+W0610 09:59:53.000700 726961 main.go:114] Language server manager got signal terminated, shutting down

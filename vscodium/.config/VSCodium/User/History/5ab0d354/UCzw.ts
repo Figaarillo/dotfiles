@@ -1,0 +1,3 @@
+const sequenceOfValues = (limit: number): void => {
+  
+}

@@ -1,0 +1,48 @@
+interface vehiculo {
+  puertas: number
+  color: string
+  funcionando: boolean
+  arrancar(): void
+}
+
+class Vehiculo implements Vehiculo {
+  private readonly _puertas: number
+  private readonly _color: string
+  private _funcionando: boolean
+
+  constructor(puertas: number, color: string, funcionando: boolean) {
+    this._puertas = puertas
+    this._color = color
+    this._funcionando = funcionando
+  }
+
+  get puertas(): number {
+    return this._puertas
+  }
+
+  get color(): string {
+    return this._color
+  }
+
+  get funcionando(): boolean {
+    return this._funcionando
+  }
+
+  arrancar(): void {
+    this._funcionando = !this._funcionando
+  }
+}
+
+
+class Auto extends Vehiculo {
+  private readonly _modelo: number
+  private readonly _marca: string
+
+  constructor(modelo: number, marca: string, puertas: number, color: string, funcionando: boolean) {
+    super(puertas, color, funcionando)
+    this._marca = marca
+    this._modelo = modelo
+  }
+
+  get model
+}

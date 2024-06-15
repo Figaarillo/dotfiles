@@ -1,0 +1,69 @@
+2024-06-10 10:00:00.215 [INFO]: No proxy settings found
+2024-06-10 10:00:05.225 [ERROR]: Failed to initialize Unleash: undefined
+2024-06-10 10:00:09.190 [INFO]: Creating manager directory: /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager
+2024-06-10 10:00:10.914 [INFO]: Using cached LS with valid crc32: /home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/42fbd33713da99925455bf873cebc46d05a18a4d/language_server_linux_x64
+2024-06-10 10:00:10.937 [INFO]: Language server started
+2024-06-10 10:00:11.271 [INFO]: [Language Server (stderr)]:
+I0610 10:00:11.267501 739732 main.go:558] Starting language server manager with pid 739732
+I0610 10:00:11.267875 739732 main.go:110] Manager acquired its lock file /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager/locks/manager.lock
+2024-06-10 10:00:11.274 [INFO]: [Language Server (stderr)]:
+I0610 10:00:11.272367 739732 main.go:248] Waiting for random port file in /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager/child_random_port_1718024411268406651_1549087002756256965 to be created
+2024-06-10 10:00:11.614 [INFO]: [Language Server (stderr)]:
+I0610 10:00:11.612033 739744 main.go:552] Starting language server process with pid 739744
+I0610 10:00:11.612205 739744 server.go:156] Language server will attempt to listen on host 127.0.0.1
+I0610 10:00:11.612400 739744 server.go:163] Language server listening on random port at 33683
+I0610 10:00:11.612620 739744 proxy.go:113] proxyplease.proxy> No proxy provided. Attempting to infer from system.
+I0610 10:00:11.612717 739744 proxy.go:113] proxyplease.proxy> No proxy could be determined. Assuming a direct connection.
+I0610 10:00:11.612863 739744 client.go:589] [DEBUG] GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions
+2024-06-10 10:00:12.838 [INFO]: [Language Server (stderr)]:
+I0610 10:00:12.835941 739744 unleash.go:90] Initializing Unleash
+2024-06-10 10:00:13.610 [INFO]: [Language Server (stderr)]:
+I0610 10:00:13.609115 739744 unleash.go:110] Successfully initialized Unleash
+2024-06-10 10:00:13.637 [INFO]: [Language Server (stderr)]:
+E0610 10:00:13.635645 739744 client_manager.go:270] Metadata is nil when trying to refresh user JWT
+2024-06-10 10:00:14.654 [INFO]: [Language Server (stderr)]:
+I0610 10:00:14.653729 739744 server.go:355] Successfully created API server client
+2024-06-10 10:00:14.777 [INFO]: [Language Server (stderr)]:
+I0610 10:00:14.774170 739744 server.go:364] Successfully initialized tokenizer
+2024-06-10 10:00:15.062 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.059896 739744 server.go:471] Local search is enabled, will index local files.
+2024-06-10 10:00:15.066 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.059958 739744 server.go:475] Using 1 indexer workers
+I0610 10:00:15.060053 739744 search_provider.go:193] Using database at /home/figarillo/.codeium/database/9c0694567290725d9dcba14ade58e297/2/MODEL_EMBED_6591
+2024-06-10 10:00:15.145 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.144765 739744 database.go:123] Bad db state detected: false
+2024-06-10 10:00:15.149 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.148291 739744 search_provider.go:207] Successfully created embedding search database in 88ms
+2024-06-10 10:00:15.151 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.149347 739744 search_provider.go:229] Successfully created and started indexer
+I0610 10:00:15.149437 739744 search_provider.go:255] Successfully created embedding search provider
+I0610 10:00:15.149457 739744 server.go:510] Successfully created exact search provider
+2024-06-10 10:00:15.164 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.163996 739744 server.go:540] Successfully created completion provider
+2024-06-10 10:00:15.166 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.165885 739744 server.go:589] Child process attempting to acquire lock file /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager/locks/child_lock_1718024411268557513_3706571378123843783
+2024-06-10 10:00:15.167 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.165989 739744 server.go:597] Child process acquired lock file /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager/locks/child_lock_1718024411268557513_3706571378123843783
+2024-06-10 10:00:15.186 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.182599 739744 server.go:183] LSP listening on random port at 36491
+I0610 10:00:15.183268 739744 web_server.go:239] Chat Web Server listening at ws://127.0.0.1:46121
+2024-06-10 10:00:15.198 [INFO]: [Language Server (stdout)]:
+36491
+2024-06-10 10:00:15.199 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.197894 739732 main.go:284] Language server manager found random server port 33683
+I0610 10:00:15.197945 739732 main.go:285] Language server manager found random lsp port 36491
+I0610 10:00:15.197983 739732 main.go:292] Language server manager attempting to connect to language server at 127.0.0.1:33683
+2024-06-10 10:00:15.256 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.255699 739732 main.go:163] Fixing language server port at 33683
+I0610 10:00:15.255748 739732 main.go:343] Language server manager successfully connected to new language server at 127.0.0.1:33683
+2024-06-10 10:00:15.287 [INFO]: Found language server running on port 33683
+2024-06-10 10:00:15.316 [INFO]: Downloaded binary: /home/figarillo/.codeium/bin/af6b6c543b224d348a8876f0c06245d9ea7929c5/ripgrep_linux_x64
+2024-06-10 10:00:15.345 [INFO]: [Language Server (stderr)]:
+I0610 10:00:15.343252 739744 rpcs_miscellaneous.go:118] Ripgrep available at /home/figarillo/.codeium/bin/af6b6c543b224d348a8876f0c06245d9ea7929c5/ripgrep_linux_x64
+2024-06-10 10:00:22.362 [INFO]: [Language Server (stderr)]:
+I0610 10:00:22.361212 739744 rpcs_miscellaneous.go:312] University version is up to date.
+2024-06-10 10:00:37.667 [INFO]: Disposing language server process
+2024-06-10 10:00:37.670 [INFO]: Deleting manager directory: /tmp/89483487-ca67-4106-876e-b56ee70c727f/codeium/manager
+2024-06-10 10:00:37.684 [INFO]: Successfully disposed language server
+2024-06-10 10:00:37.778 [INFO]: [Language Server (stderr)]:
+W0610 10:00:37.669436 739732 main.go:114] Language server manager got signal terminated, shutting down

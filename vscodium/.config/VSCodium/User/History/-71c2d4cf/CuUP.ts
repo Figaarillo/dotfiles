@@ -1,0 +1,379 @@
+class Pedido {
+  private estado: Estado;
+
+  constructor(estado: Estado) {
+    this.estado = estado;
+  }
+
+  crearDetalle() {
+    this.estado.sayState();
+  }
+}
+
+abstract class Estado {
+  abstract sayState(): void;
+}
+
+class Confirmado extends Estado {
+  sayState(): void {
+    console.log("Confirmado");
+  }
+}
+
+class Cancelado extends Estado {
+  sayState(): void {
+    console.log("Cancelado");
+  }
+}
+
+const pedido = new Pedido(new Cancelado());
+const pedido1 = new Pedido(new Confirmado());
+
+pedido.crearDetalle();
+pedido1.crearDetalle();
+
+// -------------------------
+
+class Estudiante {
+  id: number;
+
+  constructor(
+    private nombre: string,
+    private estado?: number,
+  ) {
+    this.id = Math.random();
+  }
+}
+
+const estudiante = new Estudiante("jose");
+const estudiante2 = new Estudiante("jose", 123);
+
+console.log(estudiante);
+console.log(estudiante2);
+
+// -------------------------
+interface IPersistencia {
+  materializar(): void;
+  dematerializar(): void;
+}
+
+class Alumno {
+  constructor(private persistencia: IPersistencia) {}
+
+  save(): void {
+    this.persistencia.materializar();
+  }
+
+  delete(): void {
+    this.persistencia.dematerializar();
+  }
+}
+
+class Persistencia implements IPersistencia {
+  materializar(): void {
+    console.log("Materializado");
+  }
+
+  dematerializar(): void {
+    console.log("Dematerializado");
+  }
+}
+
+class PersistenciaAlternativa implements IPersistencia {
+  materializar(): void {
+    console.log("Materializado alternativo");
+  }
+
+  dematerializar(): void {
+    console.log("Dematerializado alternativo");
+  }
+}
+
+const persistencia = new Persistencia();
+const persistencia2 = new PersistenciaAlternativa();
+
+// class Alumno2 {
+//   constructor(private persistencia) {}
+//
+//   save(): void {
+//     this.persistencia.materializar();
+//   }
+//
+//   delete(): void {
+//     this.persistencia.dematerializar();
+//   }
+// }
+//
+// class Persistencia2 implements IPersistencia {
+//   materializar(): void {
+//     console.log("Materializado");
+//   }
+//
+//   dematerializar(): void {
+//     console.log("Dematerializado");
+//   }
+// }
+
+// ----------------------------------------
+
+// MAL
+// class Equipo {
+//   agregarJugador(jugador: any); // ???
+// }
+
+// BIEN
+class Equipo {
+  agregarJugador(jugador: Atleta) {
+    console.log(jugador);
+  }
+}
+
+interface Atleta {
+  getDeporte(): string;
+  jugar(): void;
+}
+
+class JugadorFutbol implements Atleta {
+  getDeporte(): string {
+    return "futbol";
+  }
+  jugar(): void {
+    console.log("Jugando al futbol");
+  }
+}
+
+class JugadorTenis implements Atleta {
+  getDeporte(): string {
+    return "tenis";
+  }
+  jugar(): void {
+    console.log("Jugando al tenis");
+  }
+}
+ 
+class JugadorBasquet implements Atleta {
+  getDeporte(): string {
+    return "basquet";
+  }
+  jugar(): void {
+    console.log("Jugando al basquet");
+  }
+}
+
+const fubolista = new JugadorFutbol();
+const tenista = new JugadorTenis();
+const basquetista = new JugadorBasquet();
+
+const equipo = new Equipo();
+equipo.agregarJugador(fubolista);
+equipo.agregarJugador(tenista);
+equipo.agregarJugador(basquetista);
+
+
+// ------------
+
+/** Hacer esto */
+// interface Report {
+//   genearateContent(): string
+// }
+
+// class ReportContent implements Report {
+//   genearateContent(): string {
+//     return "Reporte";
+//   }
+// }
+
+// class ReportPrinter {
+//   printReport(report: Report) {
+//     console.log(report.genearateContent());
+//   }
+// }
+
+
+// class Report {
+//   genearateContent(): string {
+//     return "Reporte";
+//   }
+
+//   printReport() {
+//     console.log(this.genearateContent());
+//   }
+// }
+
+// interface Shape {
+//   area(): number
+// }
+
+// class Square implements Shape {
+//   constructor(private size: number) {}
+//   area(): number {
+//     return this.size * this.size
+//   }
+// }
+
+// class AreaCalculator {
+//   calculateTotalArea(shape: Shape): number {
+//     return shape.area();
+//   }
+// }
+
+class Square {
+  constructor(private size: number) {}
+  getSize(): number {
+    return this.size;
+  }
+}
+
+class AreaCalculator {
+  calculateSquareArea(shape: Square): number {
+    return shape.getSize() * shape.getSize();
+  }
+}
+// TEMPLATE METHOD
+
+abstract class Component {
+  create(): void {
+    this.beforeCreate();
+    this.created();
+  }
+
+  protected abstract beforeCreate(): void;
+  protected abstract created(): void;
+}
+
+class MyComponent extends Component {
+  protected beforeCreate(): void {
+    console.log("Before create");
+  }
+
+  protected created(): void {
+    console.log("Created");
+  }
+}
+
+function renderEngiene(component: Component) {
+  component.create();
+}
+
+renderEngiene(new MyComponent());
+
+
+// Write an example of dependency inversion principle
+// Dependency Inversion Principle Example
+
+interface IPersistencia {
+    materializar(): void;
+    dematerializar(): void;
+}
+
+class Persistencia implements IPersistencia {
+    materializar(): void {
+        console.log("Materializado");
+    }
+
+    dematerializar(): void {
+        console.log("Dematerializado");
+    }
+}
+
+class Alumno {
+    constructor(private persistencia: IPersistencia) {}
+
+    save(): void {
+        this.persistencia.materializar();
+    }
+
+    delete(): void {
+        this.persistencia.dematerializar();
+    }
+}
+
+// Repository pattern example with a shop store domain
+
+interface IProduct {
+    id: number;
+    name: string;
+    price: number;
+}
+
+interface IProductRepository {
+    getAll(): IProduct[];
+    getById(id: number): IProduct | undefined;
+    save(product: IProduct): void;
+    delete(id: number): void;
+}
+
+class ProductRepository implements IProductRepository {
+    private products: IProduct[] = [];
+
+    getAll(): IProduct[] {
+        return this.products;
+    }
+
+    getById(id: number): IProduct | undefined {
+        return this.products.find(product => product.id === id);
+    }
+
+    save(product: IProduct): void {
+        this.products.push(product);
+    }
+
+    delete(id: number): void {
+        this.products = this.products.filter(product => product.id !== id);
+    }
+}
+
+// Usage example
+const productRepository = new ProductRepository();
+
+const newProduct: IProduct = { id: 1, name: "Shirt", price: 20 };
+productRepository.save(newProduct);
+
+console.log(productRepository.getAll());
+
+
+/// ------------------
+
+// Interfaz para el servicio de envío de notificaciones
+interface ServicioDeNotificaciones {
+  enviarNotificacion(mensaje: string): void;
+}
+
+// Clase Usuario que depende de la abstracción (interfaz)
+class Usuario {
+  constructor(private servicioDeNotificaciones: ServicioDeNotificaciones) { }
+
+  enviarNotificacion(mensaje: string): void {
+    this.servicioDeNotificaciones.enviarNotificacion(mensaje);
+  }
+}
+
+// Implementación concreta de envío de notificaciones por correo electrónico
+class ServicioDeCorreoElectronico implements ServicioDeNotificaciones {
+  enviarNotificacion(mensaje: string): void {
+    console.log(`Enviando correo electrónico: ${mensaje}`);
+  }
+}
+
+// Implementación concreta de envío de notificaciones por mensajes de texto
+class ServicioDeMensajesTexto implements ServicioDeNotificaciones {
+  enviarNotificacion(mensaje: string): void {
+    console.log(`Enviando mensaje de texto: ${mensaje}`);
+  }
+}
+
+// Crear instancias de las implementaciones concretas
+const servicioCorreoElectronico = new ServicioDeCorreoElectronico();
+const servicioMensajesTexto = new ServicioDeMensajesTexto();
+
+// Crear instancia de Usuario con una implementación concreta
+const usuario = new Usuario(servicioCorreoElectronico);
+
+// Usuario envía notificación por correo electrónico
+usuario.enviarNotificacion("¡Hola! Has recibido un mensaje nuevo.");
+
+// Cambiar la implementación concreta en tiempo de ejecución
+usuario.servicioDeNotificaciones = servicioMensajesTexto;
+
+// Usuario envía notificación por mensaje de texto
+usuario.enviarNotificacion("¡Hola! Has recibido un mensaje nuevo.");

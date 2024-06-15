@@ -1,0 +1,104 @@
+2024-06-10 09:43:40.646 [info] Getting Manifest... codeium.codeium
+2024-06-10 09:43:40.662 [info] Getting Manifest... eamodio.gitlens
+2024-06-10 09:43:40.668 [info] Getting Manifest... usernamehw.errorlens
+2024-06-10 09:43:40.670 [info] Getting Manifest... vscodevim.vim
+2024-06-10 09:43:41.488 [info] Installing extension: vscodevim.vim
+2024-06-10 09:43:41.676 [info] Installing extension: usernamehw.errorlens
+2024-06-10 09:43:41.700 [info] Installing extension: eamodio.gitlens
+2024-06-10 09:43:41.703 [info] Installing extension: codeium.codeium
+2024-06-10 09:43:46.544 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-06-10 09:43:46.544 [info] Extension signature verification is not done: usernamehw.errorlens
+2024-06-10 09:43:46.653 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/usernamehw.errorlens-3.18.0: usernamehw.errorlens
+2024-06-10 09:43:46.672 [info] Renamed to /home/figarillo/.vscode-oss/extensions/usernamehw.errorlens-3.18.0
+2024-06-10 09:43:46.679 [info] Extracting extension completed. usernamehw.errorlens
+2024-06-10 09:43:46.710 [info] Extension installed successfully: usernamehw.errorlens
+2024-06-10 09:43:46.734 [info] Marked extension as uninstalled usernamehw.errorlens-3.17.0
+2024-06-10 09:43:46.778 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)
+2024-06-10 09:43:47.091 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-06-10 09:43:47.092 [info] Extension signature verification is not done: vscodevim.vim
+2024-06-10 09:43:47.279 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/vscodevim.vim-1.27.3: vscodevim.vim
+2024-06-10 09:43:47.290 [info] Renamed to /home/figarillo/.vscode-oss/extensions/vscodevim.vim-1.27.3
+2024-06-10 09:43:47.294 [info] Extracting extension completed. vscodevim.vim
+2024-06-10 09:43:47.336 [info] Extension installed successfully: vscodevim.vim
+2024-06-10 09:43:47.358 [info] Marked extension as uninstalled vscodevim.vim-1.27.2
+2024-06-10 09:43:47.388 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)
+2024-06-10 09:43:57.961 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-06-10 09:43:57.961 [info] Extension signature verification is not done: eamodio.gitlens
+2024-06-10 09:43:58.064 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-06-10 09:43:58.065 [info] Extension signature verification is not done: codeium.codeium
+2024-06-10 09:43:59.084 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54: codeium.codeium
+2024-06-10 09:43:59.118 [info] Renamed to /home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54
+2024-06-10 09:43:59.128 [info] Extracting extension completed. codeium.codeium
+2024-06-10 09:43:59.174 [info] Extension installed successfully: codeium.codeium
+2024-06-10 09:43:59.184 [info] Marked extension as uninstalled codeium.codeium-1.8.28
+2024-06-10 09:43:59.229 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)
+2024-06-10 09:44:00.075 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/eamodio.gitlens-15.1.0: eamodio.gitlens
+2024-06-10 09:44:00.133 [info] Renamed to /home/figarillo/.vscode-oss/extensions/eamodio.gitlens-15.1.0
+2024-06-10 09:44:00.149 [info] Extracting extension completed. eamodio.gitlens
+2024-06-10 09:44:00.194 [info] Extension installed successfully: eamodio.gitlens
+2024-06-10 09:44:00.209 [info] Marked extension as uninstalled eamodio.gitlens-14.9.1
+2024-06-10 09:44:00.241 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)
+2024-06-10 10:04:53.325 [info] Getting Manifest... angular.ng-template
+2024-06-10 10:04:53.349 [info] Installing extension: angular.ng-template
+2024-06-10 10:05:08.713 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-06-10 10:05:08.715 [info] Extension signature verification is not done: angular.ng-template
+2024-06-10 10:05:13.175 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/angular.ng-template-18.0.0: angular.ng-template
+2024-06-10 10:05:13.193 [info] Renamed to /home/figarillo/.vscode-oss/extensions/angular.ng-template-18.0.0
+2024-06-10 10:05:13.197 [info] Extracting extension completed. angular.ng-template
+2024-06-10 10:05:13.226 [info] Extension installed successfully: angular.ng-template
+2024-06-10 10:05:13.310 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)
+2024-06-10 10:06:05.657 [info] Getting Manifest... angular.ng-template
+2024-06-10 10:06:05.673 [info] Installing extension: angular.ng-template
+2024-06-10 10:06:07.869 [info] Extension installed successfully: angular.ng-template
+2024-06-10 10:06:07.934 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at a.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35240)
+    at y (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35371)
+    at t.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48350)
+    at t.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38945)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21449)
+    at async H.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:135201)

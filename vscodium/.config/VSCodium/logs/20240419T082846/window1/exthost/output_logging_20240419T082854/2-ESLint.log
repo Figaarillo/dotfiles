@@ -1,0 +1,5 @@
+[Info  - 08:29:04] ESLint server is starting.
+[Info  - 08:29:08] ESLint server running in node v18.18.2
+[Info  - 08:29:08] ESLint server is running.
+[Info  - 08:29:14] ESLint library loaded from: /home/figarillo/Documents/Programacion/NodeJS/api-server-ts/node_modules/.pnpm/eslint@8.42.0/node_modules/eslint/lib/api.js
+[Info  - 08:30:41] ESLint server stopped.

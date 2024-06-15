@@ -1,0 +1,67 @@
+[
+  {
+    "key": "ctrl+d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "explorer.paste",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+alt+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+shift+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "shift-tab",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+alt+;",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.output.action.clearOutput"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.closePanel"
+  },  
+  {
+    "key": "ctrl+shift+;",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+]

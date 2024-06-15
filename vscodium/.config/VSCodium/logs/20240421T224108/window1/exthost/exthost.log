@@ -1,0 +1,121 @@
+2024-04-21 22:41:14.550 [info] Extension host with pid 44849 started
+2024-04-21 22:41:14.672 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-21 22:41:14.844 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-04-21 22:41:14.860 [info] ExtensionService#_doActivateExtension natqe.reload, startup: true, activationEvent: '*'
+2024-04-21 22:41:14.869 [info] ExtensionService#_doActivateExtension oderwat.indent-rainbow, startup: true, activationEvent: '*'
+2024-04-21 22:41:14.905 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-04-21 22:41:15.014 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-21 22:41:15.242 [info] Eager extensions activated
+2024-04-21 22:41:15.327 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:15.439 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:15.466 [info] ExtensionService#_doActivateExtension Codeium.codeium, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:16.093 [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:16.210 [info] ExtensionService#_doActivateExtension dsznajder.es7-react-js-snippets, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.225 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.345 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.551 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.779 [info] ExtensionService#_doActivateExtension naumovs.color-highlight, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.815 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:17.875 [info] ExtensionService#_doActivateExtension vscodevim.vim, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:18.141 [info] ExtensionService#_doActivateExtension zhuangtongfa.material-theme, startup: false, activationEvent: 'onStartupFinished'
+2024-04-21 22:41:24.457 [info] Extension host terminating: renderer closed the MessagePort
+2024-04-21 22:41:24.762 [error] Canceled: Canceled
+	at new L (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:50445)
+	at l._remoteCall (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:7674)
+	at x.<computed>.F.charCodeAt.x.<computed> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:4229)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:221410)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at _.registerCommand.description (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:219979)
+	at h._executeContributedCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:222048)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220868)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at Object.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:29409)
+	at w (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:41198)
+	at h (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:46237)
+	at ActionRunners._updateContextKeys (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:18411)
+	at s (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16855)
+	at RegisteredActionRunner.unregister (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16998)
+	at RegisteredActionRunner.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:15651)
+	at ActionRunners.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16438)
+	at /home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19519
+	at Array.forEach (<anonymous>)
+	at Object.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19501)
+	at o (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:728)
+	at m._deactivate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:12980)
+	at /opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10099
+	at Array.map (<anonymous>)
+	at m._deactivateAll (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10086)
+	at m.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10470)
+	at o.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:1908)
+	at t (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:11622)
+	at MessagePortMain.<anonymous> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:7697)
+	at MessagePortMain.emit (node:events:517:28)
+	at MessagePortMain.emit (node:domain:489:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2285) setContext undefined
+2024-04-21 22:41:24.772 [error] Canceled: Canceled
+	at new L (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:50445)
+	at l._remoteCall (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:7674)
+	at x.<computed>.F.charCodeAt.x.<computed> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:4229)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:221410)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at _.registerCommand.description (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:219979)
+	at h._executeContributedCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:222048)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220868)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at Object.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:29409)
+	at w (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:41198)
+	at h (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:46237)
+	at ActionRunners._updateContextKeys (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:18411)
+	at s (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16855)
+	at RegisteredActionRunner.unregister (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16998)
+	at RegisteredActionRunner.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:15651)
+	at ActionRunners.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16438)
+	at /home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19519
+	at Array.forEach (<anonymous>)
+	at Object.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19501)
+	at o (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:728)
+	at m._deactivate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:12980)
+	at /opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10099
+	at Array.map (<anonymous>)
+	at m._deactivateAll (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10086)
+	at m.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10470)
+	at o.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:1908)
+	at t (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:11622)
+	at MessagePortMain.<anonymous> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:7697)
+	at MessagePortMain.emit (node:events:517:28)
+	at MessagePortMain.emit (node:domain:489:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2285) setContext undefined
+2024-04-21 22:41:24.773 [error] Canceled: Canceled
+	at new L (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:142:50445)
+	at l._remoteCall (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:7674)
+	at x.<computed>.F.charCodeAt.x.<computed> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:149:4229)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:221410)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at _.registerCommand.description (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:219979)
+	at h._executeContributedCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:222048)
+	at h._doExecuteCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220868)
+	at h.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:152:220735)
+	at Object.executeCommand (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:29409)
+	at w (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:41198)
+	at h (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1081:46237)
+	at ActionRunners._updateContextKeys (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:18411)
+	at s (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16855)
+	at RegisteredActionRunner.unregister (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16998)
+	at RegisteredActionRunner.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:15651)
+	at ActionRunners.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:663:16438)
+	at /home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19519
+	at Array.forEach (<anonymous>)
+	at Object.dispose (/home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.0/dist/gitlens.js:1041:19501)
+	at o (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:728)
+	at m._deactivate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:12980)
+	at /opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10099
+	at Array.map (<anonymous>)
+	at m._deactivateAll (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10086)
+	at m.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:10470)
+	at o.terminate (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:162:1908)
+	at t (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:11622)
+	at MessagePortMain.<anonymous> (/opt/vscodium-bin/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:7697)
+	at MessagePortMain.emit (node:events:517:28)
+	at MessagePortMain.emit (node:domain:489:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2285) setContext undefined
+2024-04-21 22:41:24.821 [info] Extension host with pid 44849 exiting with code 0

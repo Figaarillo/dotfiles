@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+func main() {
+	arrays()
+	compositeLiteral()
+	sliceArrays()
+}
+
+func arrays() {
+	// Declaracion de arreglos
+	var x [5]int
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
+	fmt.Println(len(x))
+
+	y := [5]int{1, 2, 3, 4, 5}
+
+	fmt.Printf("%v, %v, %v, %v, %v\n", y[0], y[1], y[2], y[3], y[4])
+}
+
+func compositeLiteral() {
+	// tipo{elemento}
+	x := []string{"uno", "dos", "tres", "cuatro"}
+	for i, v := range x {
+		fmt.Println(i, v)
+	}
+}
+
+func sliceArrays() {
+	x := []string{"uno", "dos", "tres", "cuatro"}
+	y := x[1:3]
+	fmt.Println(y)
+}

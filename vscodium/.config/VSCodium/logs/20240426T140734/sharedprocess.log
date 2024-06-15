@@ -1,0 +1,59 @@
+2024-04-26 14:07:43.874 [info] Deleted uninstalled extension from disk golang.go /home/figarillo/.vscode-oss/extensions/golang.go-0.41.2
+2024-04-26 14:07:43.925 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2.37d16e94.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2.37d16e94.vsctmp'
+    at r.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35301)
+    at a (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35436)
+    at i.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48171)
+    at i.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38766)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21270)
+    at async G.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:134142)
+2024-04-26 14:07:43.925 [info] Deleted uninstalled extension from disk codeium.codeium /home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.25
+2024-04-26 14:07:48.623 [info] Getting Manifest... eamodio.gitlens
+2024-04-26 14:07:48.640 [info] Getting Manifest... golang.go
+2024-04-26 14:07:48.642 [info] Getting Manifest... zhuangtongfa.material-theme
+2024-04-26 14:07:49.578 [info] Installing extension: golang.go
+2024-04-26 14:07:49.610 [info] Installing extension: zhuangtongfa.material-theme
+2024-04-26 14:07:49.636 [info] Installing extension: eamodio.gitlens
+2024-04-26 14:07:59.049 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-04-26 14:07:59.178 [info] Extension signature verification is not done: golang.go
+2024-04-26 14:08:00.263 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/golang.go-0.41.4: golang.go
+2024-04-26 14:08:00.352 [info] Renamed to /home/figarillo/.vscode-oss/extensions/golang.go-0.41.4
+2024-04-26 14:08:00.357 [info] Extracting extension completed. golang.go
+2024-04-26 14:08:00.490 [info] Extension installed successfully: golang.go
+2024-04-26 14:08:00.540 [info] Marked extension as uninstalled golang.go-0.41.3
+2024-04-26 14:08:00.591 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-04-26 14:08:00.596 [info] Extension signature verification is not done: zhuangtongfa.material-theme
+2024-04-26 14:08:01.227 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/zhuangtongfa.material-theme-3.17.2: zhuangtongfa.material-theme
+2024-04-26 14:08:01.454 [info] Renamed to /home/figarillo/.vscode-oss/extensions/zhuangtongfa.material-theme-3.17.2
+2024-04-26 14:08:01.476 [info] Extracting extension completed. zhuangtongfa.material-theme
+2024-04-26 14:08:01.535 [info] Extension installed successfully: zhuangtongfa.material-theme
+2024-04-26 14:08:01.573 [info] Marked extension as uninstalled zhuangtongfa.material-theme-3.17.0
+2024-04-26 14:08:01.600 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at r.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35301)
+    at a (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35436)
+    at i.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48171)
+    at i.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38766)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21270)
+    at async G.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:134142)
+2024-04-26 14:08:07.722 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /opt/vscodium-bin/resources/app/out/bootstrap-amd.js
+- /opt/vscodium-bin/resources/app/out/bootstrap-fork.js
+2024-04-26 14:08:07.727 [info] Extension signature verification is not done: eamodio.gitlens
+2024-04-26 14:08:13.217 [info] Extracted extension to file:///home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.1: eamodio.gitlens
+2024-04-26 14:08:13.340 [info] Renamed to /home/figarillo/.vscode-oss/extensions/eamodio.gitlens-14.9.1
+2024-04-26 14:08:13.372 [info] Extracting extension completed. eamodio.gitlens
+2024-04-26 14:08:13.533 [info] Extension installed successfully: eamodio.gitlens
+2024-04-26 14:08:13.546 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/figarillo/.vscode-oss/extensions/extensions.json.vsctmp'
+    at r.create (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35301)
+    at a (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:35436)
+    at i.toFileSystemProviderError (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:48171)
+    at i.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:38766)
+    at async S.stat (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:21270)
+    at async G.onDidFilesChange (/opt/vscodium-bin/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:134142)
+2024-04-26 14:08:13.622 [info] Marked extension as uninstalled eamodio.gitlens-14.9.0

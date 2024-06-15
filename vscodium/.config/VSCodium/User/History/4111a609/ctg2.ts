@@ -1,0 +1,37 @@
+import BaseEntity from '@shared/domain/entities/base.entity'
+import type IUserPayload from '../payloads/user.payload'
+import type IUserEntity from '../interfaces/user.entity.interface'
+
+class UserEntity extends BaseEntity<IUserEntity> implements IUserPayload {
+  #firstName: string
+  #lastName: string
+  #phoneNumber: number
+  #birthday: string
+
+  constructor(props: IUserEntity) {
+    super(props)
+    Object.freeze(this)
+    this.#firstName = this.data.firstName.value
+    this.#lastName = this.data.lastName.value
+    this.#phoneNumber = this.data.phoneNumber.value
+    this.#birthday = this.data.birthday.value
+  }
+
+  get firstName(): string {
+    return this.#firstName
+  }
+
+  getLastName(): string {
+    return this.#lastName
+  }
+
+  getPhoneNumber(): number {
+    return this.#phoneNumber
+  }
+
+  getBirthday(): string {
+    return this.#birthday
+  }
+}
+
+export default UserEntity

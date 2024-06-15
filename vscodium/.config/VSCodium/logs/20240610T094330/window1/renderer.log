@@ -1,0 +1,27 @@
+2024-06-10 09:43:33.440 [info] Started local extension host with pid 725062.
+2024-06-10 09:43:36.657 [info] [perf] Render performance baseline is 110ms
+2024-06-10 09:43:39.518 [info] Extension host (LocalProcess pid: 725062) is unresponsive.
+2024-06-10 09:43:41.022 [info] UNRESPONSIVE extension host: starting to profile NOW
+2024-06-10 09:43:41.629 [info] Extension host (LocalProcess pid: 725062) is responsive.
+2024-06-10 09:43:41.631 [info] UNRESPONSIVE extension host: received responsive event and cancelling profiling session
+2024-06-10 09:43:42.648 [warning] UNRESPONSIVE extension host: 'vscodevim.vim' took 31.950329907005468% of 210.06ms, saved PROFILE here: 'file:///tmp/exthost-16d307.cpuprofile'
+2024-06-10 09:44:00.774 [info] Started local extension host with pid 725545.
+2024-06-10 09:44:08.507 [info] [perf] Render performance baseline is 221ms
+2024-06-10 09:45:21.518 [error] [Extension Host] FetchError: Unleash Repository error: network timeout at: https://unleash.codeium.com/api/client/features
+	at Timeout.<anonymous> (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:2173671)
+	at listOnTimeout (node:internal/timers:569:17)
+	at process.processTimers (node:internal/timers:512:7)
+2024-06-10 09:45:40.361 [error] Cannot read properties of undefined (reading 'codeLenses'): TypeError: Cannot read properties of undefined (reading 'codeLenses')
+	at /home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:897565
+	at Array.map (<anonymous>)
+	at N (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:897539)
+	at e.<anonymous> (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:902229)
+	at h (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:888272)
+	at Generator.<anonymous> (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:889618)
+	at Generator.next (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:888701)
+	at s (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:894840)
+	at a (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:895043)
+2024-06-10 09:52:40.529 [error] [Extension Host] FetchError: Unleash Repository error: network timeout at: https://unleash.codeium.com/api/client/features
+	at Timeout.<anonymous> (/home/figarillo/.vscode-oss/extensions/codeium.codeium-1.8.54/dist/extension.js:2:2173671)
+	at listOnTimeout (node:internal/timers:569:17)
+	at process.processTimers (node:internal/timers:512:7)

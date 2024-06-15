@@ -1,0 +1,1 @@
+interface IUserRepository  extends IBa{}

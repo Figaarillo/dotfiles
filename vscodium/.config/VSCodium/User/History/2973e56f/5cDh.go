@@ -1,0 +1,3 @@
+package mian
+
+func main()

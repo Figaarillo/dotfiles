@@ -1,0 +1,167 @@
+2024-04-24 09:07:57.046 [info] Started local extension host with pid 49735.
+2024-04-24 09:08:03.495 [info] Extension host (LocalProcess pid: 49735) is unresponsive.
+2024-04-24 09:08:03.497 [info] Extension host (LocalProcess pid: 49735) is responsive.
+2024-04-24 09:08:06.542 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:06.557 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:07.172 [info] [perf] Render performance baseline is 358ms
+2024-04-24 09:08:07.530 [error] getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:08.316 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:08.397 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:08.959 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:09.116 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:09.244 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:09.420 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:12.246 [error] getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:21.555 [info] Extension host (LocalProcess pid: 49735) is unresponsive.
+2024-04-24 09:08:21.557 [info] Extension host (LocalProcess pid: 49735) is responsive.
+2024-04-24 09:08:21.560 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:21.563 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:21.564 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:21.565 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:21.882 [info] UNRESPONSIVE extension host: received responsive event and cancelling profiling session
+2024-04-24 09:08:22.399 [error] /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:22.511 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:22.767 [error] getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>: Error: getting modfile handle: /home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:5: unknown directive: <<<<<<<
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:35: unknown directive: =======
+/home/figarillo/Documents/Ingenieria/5to año/Testing/project/sacachispa-soft/backend/go.mod:37: unknown directive: >>>>>>>
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:24.980 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:36.110 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
+2024-04-24 09:08:40.549 [error] semantictokens are disabled: Error: semantictokens are disabled
+	at handleResponse (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8606:40)
+	at handleMessage (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8416:11)
+	at processMessageQueue (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8431:13)
+	at Immediate.<anonymous> (/home/figarillo/.vscode-oss/extensions/golang.go-0.41.2/dist/goMain.js:8407:11)
+	at process.processImmediate (node:internal/timers:476:21)
