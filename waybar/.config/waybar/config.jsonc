@@ -1,0 +1,382 @@
+{
+  // =================================================== //
+  //                WAYBAR CONFIGURATIONS                //
+  // =================================================== //
+  "layer": "bottom", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+  //
+  //
+  // =================================================== //
+  //                       MODULES                       //
+  // =================================================== //
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature"
+    // "custom/updates"
+  ],
+  "modules-center": [
+    "custom/music"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "backlight",
+    "custom/clipboard",
+    // "custom/screenshot",
+    "custom/notifications",
+    // "custom/weather",
+    // "battery",
+    "tray",
+    "clock",
+    "custom/cycle_wall",
+    "custom/custom",
+    "custom/power"
+  ],
+  //
+  //
+  // =================================================== //
+  //                MODULES CONFIGURATIONS               //
+  // =================================================== //
+  //
+  //
+  // ===================== LAUCHER ===================== //
+  "custom/launcher": {
+    "format": "  ",
+    "tooltip": true,
+    "exec": "echo '{\"text\":\"💧\",\"tooltip\":\"Drun | Run\"}'",
+    "return-type": "json",
+    "on-click": "pkill wofi || wofi --show drun -n",
+    "on-click-right": "pkill wofi || wofi --show run -n"
+  },
+  //
+  // 
+  // ==================== WORKSPACES =================== //
+  "hyprland/workspaces": {
+    // "persistent-workspaces": {
+    //   "1": [],
+    //   "2": [],
+    //   "3": [],
+    //   "4": [],
+    //   "5": []
+    // },
+    "format": "{icon}",
+    "format-icons": {
+      "active": " 󰮯 ",
+      "default": " 󰊠 ",
+      "persistent": " 󰊠 "
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "on-click": "activate"
+  },
+  //
+  //
+  // ======================== CPU ====================== //
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "on-click-right": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+    "interval": 2
+  },
+  // 
+  //
+  // ====================== MEMORY ===================== //
+  "memory": {
+    "format": " {}%",
+    "tooltip": true,
+    "on-click-right": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+    "interval": 2
+  },
+  //
+  //
+  // =================== TEMPERATURE =================== //
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 40,
+    "format-critical": "{icon} {temperatureC}°C",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "on-click-right": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+    "interval": 2
+  },
+  //
+  //
+  // ======================= DISK ====================== //
+  "disk": {
+    "format": "󰋊 {free}",
+    "tooltip": true,
+    "on-click-right": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
+    "interval": 2
+  },
+  //
+  //
+  // ===================== UPDATES ===================== //
+  "custom/updates": {
+    "format": "{}",
+    "exec": "~/.config/scripts/updates",
+    "on-click": "~/.config/scripts/updates update",
+    "interval": 600,
+    "tooltip": true,
+    "exec-tooltip": "~/.config/scripts/updates tooltip"
+  },
+  //
+  //
+  // ======================= MUSIC ===================== //
+  "custom/music": {
+    "format": "{icon}{}",
+    "format-icons": {
+      // "Playing": " ", // Uncomment if not using the dynamic script
+      "Paused": " ",
+      "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
+    },
+    "escape": true,
+    "tooltip": true,
+    "exec": "~/.config/scripts/caway -b 10 -e",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "on-click-right": "spotify",
+    "max-length": 35
+  },
+  //
+  //
+  // ===================== NETWORK ===================== //
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format": "{icon}{signalStrength}%",
+    "format-disconnected": "{icon}No Internet",
+    "format-linked": " {ifname} (No IP)",
+    "format-alt": "↕{bandwidthUpBytes} | ↕{bandwidthDownBytes}",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}  {gwaddr}",
+    "tooltip-format-wifi": "{icon}{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{icon}{ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "{icon}Disconnected",
+    "on-click-right": "nm-connection-editor",
+    "format-icons": {
+      "ethernet": " ",
+      "disconnected": "⚠ ",
+      "wifi": [
+        "󰤯 ",
+        "󰤟 ",
+        "󰤢 ",
+        "󰤥 ",
+        "󰤨 "
+      ]
+    },
+    "interval": 2
+  },
+  //
+  //
+  // ==================== PULSEAUDIO =================== //
+  "pulseaudio": {
+    "format": "{icon}{volume}%", // {format_source}
+    "format-bluetooth": "{icon}{volume}%", // {format_source}
+    "format-bluetooth-muted": " ", // {format_source}
+    "format-muted": "婢", // {format_source}
+    "format-icons": {
+      "headphone": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": "",
+      "car": " ",
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol -t 5",
+    "on-click-right": "pavucontrol -t 3",
+    "scroll-step": 5 // %, can be a float
+  },
+  //
+  //
+  // =================== MICROPHONE ==================== //
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": " ",
+    "on-click": "pavucontrol -t 4",
+    "scroll-step": 5
+  },
+  //
+  //
+  // ==================== BACKLIGHT ==================== //
+  "backlight": {
+    "format": "{icon}{percent}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      "󰃝 ",
+      "󰃞 ",
+      "󰃟 ",
+      "󰃠 "
+    ],
+    "scroll-step": 5
+  },
+  //
+  //
+  // ==================== CLIPBOARD ==================== //
+  "custom/clipboard": {
+    "format": "{}",
+    "exec": "~/.config/scripts/tools/expand clipboard",
+    "return-type": "json",
+    // Window position is managed in Hyperland config's windowrulev2
+    // Here "-l top_right -x -15 -y 10" doesn't matter as '-n' mode is used
+    "on-click": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy",
+    "on-click-middle": "rm -f ~/.cache/cliphist/db",
+    "on-click-right": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist delete",
+    "escape": true
+  },
+  //
+  //
+  // ==================== SCREENSHOT =================== //
+  "custom/screenshot": {
+    "format": "{}",
+    "exec": "~/.config/scripts/tools/expand ss-icon",
+    "return-type": "json",
+    "on-click": "~/.config/scripts/screenshot_full"
+  },
+  //
+  //
+  // ================== NOTIFICATIONS ================== //
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.15 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.15 && swaync-client -d -sw",
+    "escape": true
+  },
+  //
+  //
+  // ==================== WEATHER ====================== //
+  "custom/weather": {
+    "tooltip": true,
+    "format": "{}",
+    "exec": "~/.config/scripts/tools/expand weather",
+    "return-type": "json"
+  },
+  //
+  //
+  // ===================== BATTERY ===================== //
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 10
+    },
+    "format": "{icon}{capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    "format-full": " {capacity}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "interval": 5
+  },
+  //
+  //
+  // ======================= TRAY ====================== //
+  "tray": {
+    "icon-size": 15,
+    "spacing": 5
+  },
+  //
+  //
+  // ====================== CLOCK ====================== //
+  "clock": {
+    "timezone": "America/Argentina/Cordoba",
+    "format": " {:%R}",
+    "format-alt": " {:%H:%M  %a %d %B}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar-weeks-pos": "right",
+    "today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
+    "format-calendar": "<span color='#f2cdcd'><b>{}</b></span>",
+    "format-calendar-weeks": "<span color='#94e2d5'><b>W{:%U}</b></span>",
+    "format-calendar-weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+    "interval": 60
+  },
+  //
+  //
+  // ==================== CICLE WALL =================== //
+  "custom/cycle_wall": {
+    "format": "{}",
+    "exec": "~/.config/scripts/tools/expand wall",
+    "return-type": "json",
+    // "interval": 1,
+    "on-click": "~/.config/scripts/tools/expand cycle",
+    "on-click-right": "~/.config/scripts/tools/expand cycler"
+  },
+  //
+  //
+  // ====================== CUSTOM ===================== //
+  "custom/custom": {
+    "format": "{}",
+    "exec": "~/.config/scripts/tools/expand arrow-icon",
+    "on-click": "~/.config/scripts/tools/expand_toolbar",
+    "return-type": "json"
+  },
+  //
+  //
+  // ====================== POWER ====================== //
+  "custom/power": {
+    "format": "{}",
+    // "exec": "~/.scripts/tools/expand power",
+    "exec": "echo '{\"text\":\"⏻\",\"tooltip\":\"Power\"}'",
+    "return-type": "json",
+    "on-click": "~/.config/wlogout/launch.sh"
+  }
+  //
+  //
+  // =================================================== //
+  //                        OTHER                        //
+  // =================================================== //
+  // "idle_inhibitor": {
+  //   "format": "{icon}",
+  //   "format-icons": {
+  //     "activated": "",
+  //     "deactivated": ""
+  //   }
+  // },
+  // "hyprland/window": {
+  //   "format": "{}",
+  //   "separate-outputs": true,
+  //   "max-length": 35
+  // }
+}
