@@ -1,5 +1,0 @@
-{
-  "*.ts": [
-    "pnpm run pre-check"
-  ]
-}

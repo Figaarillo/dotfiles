@@ -1,3 +1,0 @@
-interface IUserRepository {
-	getAll
-}

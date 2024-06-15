@@ -1,3 +1,0 @@
-## Librerias
-
-- lint-staged

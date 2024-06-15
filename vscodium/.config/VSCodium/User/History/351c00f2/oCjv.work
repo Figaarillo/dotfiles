@@ -1,6 +1,0 @@
-go
-
-use (
-	calculator
-	helloworld
-)
