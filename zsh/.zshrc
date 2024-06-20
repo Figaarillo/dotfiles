@@ -137,12 +137,12 @@ fi
 
 # Neovim
 alias neovim="nvim"
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kick="NVIM_APPNAME=NvimKickstart nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 
 function nvims() {
-  items=("default" "LazyVim" "NvChad" "AstroNvim")
+  items=("default" "NvChad" "AstroNvim" "NvimKickstart")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -153,7 +153,7 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
-# bindkey -s ^a "nvims\n"
+bindkey -s ^a "nvims\n"
 
 # Created by `pipx` on 2024-04-10 15:30:51
 export PATH="$PATH:/home/figarillo/.local/bin"
