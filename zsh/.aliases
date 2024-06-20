@@ -86,7 +86,7 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # matrix
-alias matrix='rusty-rain -s'
+alias matrix='rusty-rain -C 0,139,139 -s -c jap'
 
 # typers
 alias tt='ttyper'
