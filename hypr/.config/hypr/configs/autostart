@@ -1,0 +1,68 @@
+#!/usr/bin/bash
+
+# ########################################################### #
+#                       AUTOSTART SCRIPT                      #
+# ########################################################### #
+
+# ######################## VARIABLES ######################## #
+scripts=~/.scripts
+
+# ##################### Reset XDG Portal #################### #
+$scripts/reset_xdg_portal.sh
+
+# ####################### WAYLAND ENV ####################### #
+# https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
+# https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+# ###################### Pipewire Setup ##################### #
+# Restart pipewire to avoid bugs
+systemctl --user restart pipewire
+
+# ###################### LAUNCH POLKIT ###################### #
+# Policy Authentication Agent for GUI applications
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# ######################### KEYRING ######################### #
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export $(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
+# ########################### SSH ########################### #
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
+# #################### GTK THEME SETTINGS ################### #
+gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
+gsettings set org.gnome.desktop.interface font-name 'CaskaydiaCove Nerd Font 9'
+gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Moon'
+gsettings set org.gnome.desktop.interface cursor-theme 'Layan-cursors'
+
+# ###################### NEMO SETTINGS ###################### #
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+
+# ###################### START DAEMONS ###################### #
+# waybar daemon
+$scripts/launch_waybar &
+$scripts/dynamic &
+# notification daemon
+swaync &
+# music daemon
+mpd &
+# sleep 1
+mpd-mpris &
+# wallpaper daemon
+swww query || swww-daemon -f xrgb &
+
+# effects
+$scripts/tools/rgb &
+
+# Applets
+$scripts/appindicator.py &
+blueman-applet &
+nm-applet --indicator &
+
+# ########################## OTHER ########################## #
+hyprctl setcursor "Layan-cursors" 24
+wl-paste --watch cliphist store &
+notify-send -a aurora "hello $(whoami)" &
+libinput-gestures-setup start &
