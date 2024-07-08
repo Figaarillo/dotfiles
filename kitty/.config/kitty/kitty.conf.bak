@@ -1,0 +1,12 @@
+include ./bell.conf
+include ./colorscheme.conf
+include ./current-theme.conf
+include ./cursor.conf
+include ./font.conf
+include ./keybindings.conf
+include ./mouse.conf
+include ./performance.conf
+include ./scrollback.conf
+include ./settings.conf
+include ./tab.conf
+include ./window.conf
