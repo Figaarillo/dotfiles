@@ -3,3 +3,4 @@
 .git
 packer_compiled.lua
 tmux/.tmux/plugins/
+session.conf
