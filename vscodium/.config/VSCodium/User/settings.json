@@ -1,0 +1,300 @@
+{
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "color-highlight.matchWords": true,
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.showBreakpointsInOverviewRuler": true,
+  "diffEditor.codeLens": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.folding": false,
+  "editor.fontFamily": "'Operator Mono Lig','Operator Mono Medium','CaskaydiaCove NF','Victor Mono SemiBold','Cascadia Code','JetBrains Mono','Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "bold",
+  "editor.formatOnPaste": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.lineHeight": 25,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.stickyScroll.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro]": {
+      "textMateRules": [
+        {
+          "name": "js object key",
+          "scope": "meta.object-literal.key",
+          "settings": {
+            "foreground": "#56b6c2"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "name": "One Dark italic",
+        "scope": [
+          "comment",
+          "entity.other.attribute-name",
+          "keyword",
+          "markup.underline.link",
+          "storage.modifier",
+          "storage.type",
+          "string.url",
+          "variable.language.super",
+          "variable.language.this"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "One Dark italic reset",
+        "scope": [
+          "keyword.operator",
+          "keyword.other.type",
+          "storage.modifier.import",
+          "storage.modifier.package",
+          "storage.type.built-in",
+          "storage.type.function.arrow",
+          "storage.type.generic",
+          "storage.type.java",
+          "storage.type.primitive"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "editor.wordWrap": "on",
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "plaintext": "pug"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "errorLens.excludeBySource": ["ts(2322)", "ts(2339)", "ts(2420)"],
+  "errorLens.gutterIconsEnabled": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.html": "html",
+    "intro": "jupyter"
+  },
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "git.autofetch": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "haskell.manageHLS": "GHCup",
+  "indentRainbow.colorOnWhiteSpaceOnly": true,
+  "indentRainbow.colors": [
+    // Palete 1 - Custom colors
+    /* 
+		"#2DE2E64D",
+		"#F6019D5D",
+		"#C62D525D",
+		"#F800EC3D",
+		"#A837FF3D",
+		"#26FAB64D"
+		*/
+    // Palete 2 - Synthwave
+    "#8c1eff3d",
+    "#f222ff3d",
+    "#ff29754d",
+    "#ff901f6d",
+    "#ffd3196d",
+    "#ff29754d",
+    "#f222ff3d"
+    // Palete 3 - Retrowave
+    /* 
+		"#2de2e64d",
+		"#035ee82d",
+		"#f6019d4f",
+		"#d400783d",
+		"#9700cc3d"
+        */
+    // Palete 4 - Cyberpunk Retrowave
+    /* 
+		"#ff124f4d",
+		"#ff00a03d",
+		"#fe75fe2d",
+		"#7a04eb3d",
+		"#1204582d" 
+        */
+    // extra
+    /*
+		"#01FFFF6D",
+		"#8600291D",
+		"#D300432D",
+		"#FF83002D",
+		"#004Eff2d" 
+		"#8B008B3D",
+		*/
+  ],
+  "indentRainbow.updateDelay": 10,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "notebook.breadcrumbs.showCodeCells": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "right"
+  },
+  "oneDarkPro.bold": true,
+  "oneDarkPro.color": {
+    "dark": "#0B0E14",
+    "purple": "#ab4eff"
+  },
+  "oneDarkPro.vivid": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSpacing": true,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.insertPragma": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.printWidth": 80,
+  "prettier.proseWrap": "always",
+  "prettier.quoteProps": "as-needed",
+  "prettier.requirePragma": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
+  "quokka.automaticRestart": true,
+  "quokka.compactMessageOutput": true,
+  "quokka.showValueOnMultilineSelection": true,
+  "scm.inputFontSize": 14,
+  "security.workspace.trust.untrustedFiles": "open",
+  "tabnine.experimentalAutoImports": true,
+  "tabnine.receiveBetaChannelUpdates": true,
+  "terminal.external.windowsExec": "/bin/zsh",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.fontFamily": "'Hack Nerd Font','Fira Code', 'JetBrainsMono NF'",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<A-z>": false,
+    "<C-a": false,
+    "<C-d>": false,
+    "<C-c>": false,
+    "<C-f": false,
+    "<C-h>": true,
+    "<C-l>": true,
+    "<C-s>": false,
+    "<C-y>": false,
+    "<C-w>": false,
+    "<C-z>": false,
+    "<M-z>": false,
+    "<C-b>": false,
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-h>"],
+      "after": ["<left>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<down>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<up>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<right>"]
+    }, 
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.doubleClickIconToClose": true,
+  "window.titleBarStyle": "custom",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#B48EAD",
+    "editorBracketHighlight.foreground2": "#A3BE8C",
+    "editorBracketHighlight.foreground3": "#EBCB8B",
+    "editorBracketHighlight.foreground4": "#D08770",
+    "editorBracketHighlight.foreground5": "#BF616A",
+    "editorBracketHighlight.foreground6": "#abb2c0",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#db6165"
+  },
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "git-rebase-todo": "default"
+  },
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "workbench.settings.editor": "ui",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.sideBar.location": "right",
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "go.toolsManagement.autoUpdate": true,
+  "oneDarkPro.editorTheme": "Ocean",
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "terminal.integrated.enableVisualBell": true,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "window.customTitleBarVisibility": "auto",
+  "workbench.editor.showTabs": "none",
+  "breadcrumbs.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "zenMode.showTabs": "none"
+}
