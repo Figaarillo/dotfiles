@@ -4,7 +4,9 @@ My personal dotfiles for Hyprland
 
 ![home](./screenshots/home.png)
 
-### Screenshots
+<h3 align="center">Screenshots</h3>
+
+<hr>
 
 <details><summary>Neofetch</summary>
 
@@ -26,6 +28,8 @@ My personal dotfiles for Hyprland
 
 
 <h3 align="center">Installation of dependencies</h3>
+
+<hr>
 
 <details>
   <summary><h4>Basic dependencies</h4></summary>
@@ -139,13 +143,10 @@ My personal dotfiles for Hyprland
 
 </details>
 
-<h3 align="center">Customization of fonts, gtk theme, icons, mouse, grub, plymouth & sddm</h3>
 
-Thanks to [PROxZIMA](https://github.com/PROxZIMA) for the awesome works!
+<h3 align="center">Customization of fonts, gtk theme, icons & mouse</h3>
 
-```sh
-yay -S boo-grub-git sddm-git boo-sddm-git proxzima-plymouth-git \
-```
+<hr>
 
 <details>
   <summary><h4>Fonts</h4></summary>
@@ -226,6 +227,17 @@ yay -S boo-grub-git sddm-git boo-sddm-git proxzima-plymouth-git \
   ```
 </details>
 
+
+<h3 align="center">Customization of  grub, plymouth & sddm</h3>
+
+<hr>
+
+Thanks to [PROxZIMA](https://github.com/PROxZIMA) for the awesome works!
+
+```sh
+yay -S boo-grub-git sddm-git boo-sddm-git proxzima-plymouth-git
+```
+
 <details>
   <summary><h4>Grub</h4></summary>
 
@@ -280,6 +292,8 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
 <details>
   <summary><h4>SDDM</h4></summary>
 
+  See [PROxZIMA repo](https://github.com/PROxZIMA/boo-sddm) for more details.
+
   1. Edit sddm config file
 
   ```bash
@@ -296,18 +310,18 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
   2. Reboot and voila
 
 
-  #### Dotfiles
-
-  ```bash
-  cd ~/Downloads
-  git clone https://github.com/PROxZIMA/.dotfiles.git
-  cd .dotfiles
-# cp -r .config .icons .local .mpd .ncmpcpp .scripts ~/
-# cp -r .config .mpd .ncmpcpp .scripts ~/
-  cp .face .fonts.conf .dmrc .gtkrc-2.0 ~/
-  chmod -R +x ~/.scripts/
-  chmod +x ~/.config/hypr/autostart
-  chmod -R +x ~/.config/wlogout/
-  ```
+<!--   #### Dotfiles -->
+<!---->
+<!--   ```bash -->
+<!--   cd ~/Downloads -->
+<!--   git clone https://github.com/PROxZIMA/.dotfiles.git -->
+<!--   cd .dotfiles -->
+<!-- # cp -r .config .icons .local .mpd .ncmpcpp .scripts ~/ -->
+<!-- # cp -r .config .mpd .ncmpcpp .scripts ~/ -->
+<!--   cp .face .fonts.conf .dmrc .gtkrc-2.0 ~/ -->
+<!--   chmod -R +x ~/.scripts/ -->
+<!--   chmod +x ~/.config/hypr/autostart -->
+<!--   chmod -R +x ~/.config/wlogout/ -->
+<!--   ``` -->
 
 </details>
