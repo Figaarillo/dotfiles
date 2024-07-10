@@ -34,7 +34,7 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 # #################### GTK THEME SETTINGS ################### #
 gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
 gsettings set org.gnome.desktop.interface font-name 'CaskaydiaCove Nerd Font 9'
-gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Moon'
+gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Layan-cursors'
 
 # ###################### NEMO SETTINGS ###################### #
