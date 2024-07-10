@@ -14,6 +14,7 @@ My personal dotfiles for Hyprland
 
 </details>
 
+
 <details><summary>Spotify</summary>
 
 ![spotify](./screenshots/spotify.png)
@@ -33,24 +34,24 @@ My personal dotfiles for Hyprland
 
 <details>
   <summary><h4>Basic dependencies</h4></summary>
-  <div>
-    <details>
-      <summary>Pkgs to be installed</summary>
-      <ul>
-        <li><code>base-devel</code>: base build tools</li>
-        <li><code>mtpfs</code>: for media transfer protocol</li>
-        <li><code>jmtpfs</code>: for later version supports</li>
-        <li><code>gvfs-mtp</code>: for automount and all ( usb android file transfer )</li>
-        <li><code>gvfs-gphoto2</code>: for picture transfer protocol</li>
-        <li><code>gnome-keyring</code>: for keyring support</li>
-        <li><code>jq</code>: for json support</li>
-        <li><code>unzip</code>: for archive support</li>
-        <li><code>blueman</code>: for bluetooth support</li>
-        <li><code>bluez</code>: for bluetooth support</li>
-        <li><code>bluez-utils</code>: for bluetooth support</li>
-        <li><code>zsh</code>: for zsh shell</li>
-      </ul>
-    </details>
+
+  <details>
+    <summary>Pkgs to be installed</summary>
+    <ul>
+      <li><code>base-devel</code>: base build tools</li>
+      <li><code>mtpfs</code>: for media transfer protocol</li>
+      <li><code>jmtpfs</code>: for later version supports</li>
+      <li><code>gvfs-mtp</code>: for automount and all ( usb android file transfer )</li>
+      <li><code>gvfs-gphoto2</code>: for picture transfer protocol</li>
+      <li><code>gnome-keyring</code>: for keyring support</li>
+      <li><code>jq</code>: for json support</li>
+      <li><code>unzip</code>: for archive support</li>
+      <li><code>blueman</code>: for bluetooth support</li>
+      <li><code>bluez</code>: for bluetooth support</li>
+      <li><code>bluez-utils</code>: for bluetooth support</li>
+      <li><code>zsh</code>: for zsh shell</li>
+    </ul>
+  </details>
 
   ```sh
   sudo pacman -Syy \
@@ -60,9 +61,9 @@ My personal dotfiles for Hyprland
   gnome-keyring \
   jq unzip unrar \
   bluez bluez-utils \
-  zsh
+  zsh neovim git
   ```
-  </div>
+
 </details>
 
 <details>
@@ -77,6 +78,7 @@ My personal dotfiles for Hyprland
 
 </details>
 
+
 <details>
   <summary><h4>Necessary dependencies</h4></summary>
   <div>
@@ -90,7 +92,7 @@ My personal dotfiles for Hyprland
   ```bash
   yay -S base-devel \
   hyprland xdg-desktop-portal-hyprland wayland-protocols \
-  waybar-hyprland wlogout wofi \
+  waybar waybar-hyprland wlogout wofi \
   hyprpicker wl-clipboard swww swaync swaylock-effects-git grim \
   qt5-base qt5-wayland qt6-base qt6-wayland qt5ct qt6ct polkit-gnome \
   pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
@@ -101,6 +103,48 @@ My personal dotfiles for Hyprland
   --needed
   ```
   </div>
+</details>
+
+
+<details>
+  <summary><h4>Install dependencies for ZSH</h4></summary>
+
+  ```sh
+  # install ohmyzsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+
+  # install zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+  # install zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+  # install zsh-completions
+  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+  ```
+
+</details>
+
+
+<details>
+  <summary><h4>Install dependencies for Neovim</h4></summary>
+
+  ```sh
+  yay -S ripgrep fd azygit
+  ```
+
+</details>
+
+<details>
+  <summary><h4>Install dependencies for Tmux</h4></summary>
+
+  ```sh
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  # To enable tmux plugin manager you neeed to press
+  # `prefix` + R
+  # and `prefix` + I
+  ```
 </details>
 
 <details>
@@ -115,6 +159,7 @@ My personal dotfiles for Hyprland
   uget tldr \
   qalculate-gtk qimgv-light \
   tumbler tumbler-extra-thumbnailers \
+  lazydocker
   --needed
   ```
   - <kdb>Obs</kdb>
