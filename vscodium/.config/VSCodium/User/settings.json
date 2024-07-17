@@ -296,5 +296,6 @@
   "workbench.editor.showTabs": "none",
   "breadcrumbs.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "zenMode.showTabs": "none"
+  "zenMode.showTabs": "none",
+  "window.menuBarVisibility": "compact"
 }
