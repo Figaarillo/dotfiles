@@ -14,7 +14,6 @@ My personal dotfiles for Hyprland
 
 </details>
 
-
 <details><summary>Spotify</summary>
 
 ![spotify](./screenshots/spotify.png)
@@ -26,7 +25,6 @@ My personal dotfiles for Hyprland
 ![neovim](./screenshots/neovim.png)
 
 </details>
-
 
 <h3 align="center">Installation of dependencies</h3>
 
@@ -78,33 +76,30 @@ My personal dotfiles for Hyprland
 
 </details>
 
-
 <details>
   <summary><h4>Necessary dependencies</h4></summary>
-  <div>
-    <details>
-      <summary>Pkgs to be installed</summary>
-      <ul>
-         <li><code>wayland-protocols</code>: Specifications of extended Wayland protocols</li>      
-      </ul>
-    </details>
+  <details>
+    <summary>Pkgs to be installed</summary>
+    <ul>
+        <li><code>wayland-protocols</code>: Specifications of extended Wayland protocols</li>
+    </ul>
+  </details>
 
   ```bash
   yay -S base-devel \
   hyprland xdg-desktop-portal-hyprland wayland-protocols \
   waybar waybar-hyprland wlogout wofi \
-  hyprpicker wl-clipboard swww swaync swaylock-effects-git grim \
+  hyprpicker wl-clipboard swww swaync swaylock-effects-git grim slurp \
   qt5-base qt5-wayland qt6-base qt6-wayland qt5ct qt6ct polkit-gnome \
   pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
-  playerctl pavucontrol mpd mpd-mpris \
+  brightnessctl playerctl pavucontrol-gtk3 \
   yad blueman network-manager-applet libinput-gestures \
   cava kitty starship tty-clock-git btop geany bat cliphist \
-  geany \
+  reflector \
   --needed
   ```
-  </div>
-</details>
 
+</details>
 
 <details>
   <summary><h4>Install dependencies for ZSH</h4></summary>
@@ -125,12 +120,14 @@ My personal dotfiles for Hyprland
 
 </details>
 
-
 <details>
   <summary><h4>Install dependencies for Neovim</h4></summary>
 
   ```sh
   yay -S ripgrep fd azygit
+
+  # clone config
+  git clone https://github.com/Figaarillo/nvim-conifg ~/.config/nvim
   ```
 
 </details>
@@ -145,12 +142,13 @@ My personal dotfiles for Hyprland
   # `prefix` + R
   # and `prefix` + I
   ```
+
 </details>
 
 <details>
   <summary><h4>Extra dependencies</h4></summary>
 
-  - <kdb>Utils</kdb>
+- <kdb>Utils</kdb>
 
   ```bash
   yay -S \
@@ -159,28 +157,28 @@ My personal dotfiles for Hyprland
   uget tldr \
   qalculate-gtk qimgv-light \
   tumbler tumbler-extra-thumbnailers \
-  lazydocker
   --needed
   ```
-  - <kdb>Obs</kdb>
+
+- <kdb>Obs</kdb>
 
   ```sh
   yay -S obs-studio wlrobs-hg v4l2loopback-dkms v4l2loopback-utils v4l-utils
   ```
 
-  - <kdb>Thunar</kdb>
+- <kdb>Thunar</kdb>
 
   ```sh
   yay -S thunar thunar-archive-plugin thunar-shares-plugin thunar-volmam
   ```
 
-  - <kdb>Apps</kdb>
+- <kdb>Apps</kdb>
 
   ```sh
   yay -S discord spotify telegram-desktop
   ```
 
-  - <kdb>Extras</kdb>
+- <kdb>Extras</kdb>
 
   ```bash
   yay -S nemo gamemode g4music visual-studio-code-bin light chromium-wayland-vaapi libreoffice-fresh rlr-git bulky waydroid binder_linux-dkms
@@ -188,6 +186,19 @@ My personal dotfiles for Hyprland
 
 </details>
 
+<details>
+  <summary><h4>For me</h4></summary>
+
+  ```sh
+  yay -S lazydocker obsidian 
+  ```
+
+  ```sh
+  # Magical shell history 
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+  ```
+
+</details>
 
 <h3 align="center">Customization of fonts, gtk theme, icons & mouse</h3>
 
@@ -223,7 +234,7 @@ My personal dotfiles for Hyprland
   yay -S $(yay -Ssq operator-mono)
 `````
 
-  #### Update font cache
+#### Update font cache
 
   When you have installed new fonts, you need to update your font cache, so that the new fonts will be used by the system.
 
@@ -259,6 +270,7 @@ My personal dotfiles for Hyprland
   cd Tokyo-Night-GTK-Theme/
   sudo cp -r icons/Tokyonight-Moon /usr/share/icons/
   ```
+
 </details>
 
 <details>
@@ -270,8 +282,8 @@ My personal dotfiles for Hyprland
   cd Sweet/
   sudo cp -r kde/cursors/Sweet-cursors /usr/share/icons/
   ```
-</details>
 
+</details>
 
 <h3 align="center">Customization of  grub, plymouth & sddm</h3>
 
@@ -291,7 +303,7 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
   1. Edit grub config file
 
   ```bash
-  $ sudo vim /etc/default/grub
+  sudo vim /etc/default/grub
   ```
 
   change `#GRUB_THEME=` to `GRUB_THEME="/usr/share/grub/themes/boo/theme.txt"`
@@ -299,7 +311,7 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
   2. Update grub using
 
   ```bash
-  $ sudo grub-mkconfig -o /boot/grub/grub.cfg
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
   ```
 
   3. Reboot and voila
@@ -342,7 +354,7 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
   1. Edit sddm config file
 
   ```bash
-  $ sudo vim /etc/sddm.conf
+  sudo vim /etc/sddm.conf
   ```
 
   Make the following changes
@@ -353,7 +365,6 @@ See [PROxZIMA repo](https://github.com/PROxZIMA/boo-grub) for more details.
   ```
 
   2. Reboot and voila
-
 
 <!--   #### Dotfiles -->
 <!---->
