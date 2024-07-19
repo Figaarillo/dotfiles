@@ -92,7 +92,7 @@ My personal dotfiles for Hyprland
   hyprpicker wl-clipboard swww swaync swaylock-effects-git grim slurp \
   qt5-base qt5-wayland qt6-base qt6-wayland qt5ct qt6ct polkit-gnome \
   pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
-  brightnessctl playerctl pavucontrol-gtk3 \
+  brightnessctl playerctl pavucontrol-gtk3 mpd mpd-mpris \
   yad blueman network-manager-applet libinput-gestures \
   cava kitty starship tty-clock-git btop geany bat cliphist \
   reflector \
@@ -154,7 +154,7 @@ My personal dotfiles for Hyprland
   yay -S \
   xdg-user-dirs xdg-utils \
   system76-power \
-  uget tldr \
+  uget tldr tree \
   qalculate-gtk qimgv-light \
   tumbler tumbler-extra-thumbnailers \
   --needed
