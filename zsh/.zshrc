@@ -162,3 +162,7 @@ export PATH="$PATH:/home/figarillo/.local/bin"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
