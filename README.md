@@ -4,7 +4,7 @@ My personal dotfiles for Hyprland
 
 ![home](./screenshots/home.png)
 
-<hr>
+<br>
 
 <h3 align="center">Screenshots</h3>
 
@@ -28,7 +28,7 @@ My personal dotfiles for Hyprland
 
 </details>
 
-<hr>
+<br>
 
 <h3 align="center">Installation of dependencies</h3>
 
@@ -181,7 +181,7 @@ yay -S lazydocker obsidian
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 ```
 
-<hr>
+<br>
 
 <h3 align="center">Customization of fonts, gtk theme, icons & mouse</h3>
 
@@ -256,7 +256,7 @@ cd Sweet/
 sudo cp -r kde/cursors/Sweet-cursors /usr/share/icons/
 ```
 
-<hr>
+<br>
 
 <h3 align="center">Customization of  grub, plymouth & sddm</h3>
 
