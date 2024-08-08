@@ -93,7 +93,7 @@ pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber \
 brightnessctl playerctl pavucontrol-gtk3 mpd mpd-mpris \
 yad blueman network-manager-applet libinput-gestures \
 cava kitty starship tty-clock-git btop geany bat cliphist \
-reflector \
+git-delta reflector \
 --needed
 ```
 
