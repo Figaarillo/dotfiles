@@ -238,13 +238,12 @@
 /* ===================================================== */
 #custom-music.low {
   background: rgb(148, 226, 213);
-  background: linear-gradient(56deg, rgba(148, 226, 213, 1) 0%, rgba(137, 220, 235, 1) 19%, rgba(116, 199, 236, 1) 43%, rgba(137, 180, 250, 1) 56%, rgba(180, 190, 254, 1) 80%, rgba(186, 187, 241, 1) 100%);
+  background: linear-gradient(52deg, rgba(148, 226, 213, 1) 0%, rgba(137, 220, 235, 1) 19%, rgba(116, 199, 236, 1) 43%, rgba(137, 180, 250, 1) 56%, rgba(180, 190, 254, 1) 80%, rgba(186, 187, 241, 1) 100%);
   background-size: 300% 300%;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
   animation: gradient 15s ease infinite;
   font-weight: bold;
   color: #fff;
-  /* filter: saturate(0); */
 }
 
 #custom-music.random {
