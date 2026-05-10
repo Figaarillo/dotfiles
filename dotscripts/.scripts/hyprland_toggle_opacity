@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+OVERRIDE=~/.config/hypr/configs/override.conf
+FLAG="/tmp/hypr_cleanmode"
+
+if [ -f "$FLAG" ]; then
+    echo "" > "$OVERRIDE"
+    hyprctl reload config-only
+    rm "$FLAG"
+    notify-send -a hyprland "Clean mode" "Off"
+else
+    cat > "$OVERRIDE" << 'EOF'
+decoration {
+    active_opacity = 1.0
+    inactive_opacity = 1.0
+    blur {
+        enabled = false
+    }
+    dim_inactive = false
+}
+
+windowrule {
+    name = cleanmode-opacity
+    match:class = .*
+    opacity = 1.0 1.0
+}
+EOF
+    hyprctl reload config-only
+    touch "$FLAG"
+    notify-send -a hyprland "Clean mode" "On"
+fi

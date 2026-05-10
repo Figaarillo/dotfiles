@@ -160,9 +160,12 @@ function nvims() {
 export PATH="$PATH:/home/figarillo/.local/bin"
 
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+# opencode
+export PATH=/home/figarillo/.opencode/bin:$PATH
+
+# API keys — kept in ~/.secrets (not tracked by git)
+[ -f ~/.secrets ] && source ~/.secrets

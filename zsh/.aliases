@@ -23,18 +23,18 @@ alias ohmyzsh="thunar ~/.oh-my-zsh"
 alias nvimfzf="fzf --preview 'bat -n --theme=Dracula --tabs 2 --style=numbers --color=always {}' | xargs -n 1 nvim"
 
 # ls
-alias ls='exa -alhT --tree --level=1 --long --color=always --icons --no-user --git'
-# alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
+# alias ls='exa -alhT --tree --level=1 --long --color=always --icons --no-user --git'
+# # alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+# alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+# alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+# alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+# alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+# alias lm='ls -m'
+# alias lr='ls -R'
+# alias lg='ls -l --group-directories-first'
 
 alias bat='bat -n --theme=Dracula --tabs 2'
-alias cat='bat --style header --style snip --style changes --style header'
+# alias cat='bat --style header --style snip --style changes --style header'
 
 # cp and mv
 alias mv='mv -v'

@@ -4,3 +4,7 @@
 packer_compiled.lua
 tmux/.tmux/plugins/
 session.conf
+autostart/.config/autostart/jetbrains-toolbox.desktop
+autostart/.config/autostart/jetbrains-toolbox.desktop
+autostart/.config/autostart/megasync.desktop
+autostart/.config/autostart/jetbrains-toolbox.desktop

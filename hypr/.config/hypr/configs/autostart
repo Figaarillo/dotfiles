@@ -19,6 +19,7 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 # ###################### Pipewire Setup ##################### #
 # Restart pipewire to avoid bugs
 systemctl --user restart pipewire
+systemctl --user restart wireplumber &
 
 # ###################### LAUNCH POLKIT ###################### #
 # Policy Authentication Agent for GUI applications
@@ -32,17 +33,19 @@ export $(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 # #################### GTK THEME SETTINGS ################### #
-gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
-gsettings set org.gnome.desktop.interface font-name 'CaskaydiaCove Nerd Font 9'
-gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Dark'
-gsettings set org.gnome.desktop.interface cursor-theme 'Layan-cursors'
+{
+  gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
+  gsettings set org.gnome.desktop.interface font-name 'CaskaydiaCove Nerd Font 9'
+  gsettings set org.gnome.desktop.interface icon-theme 'Tokyonight-Dark'
+  gsettings set org.gnome.desktop.interface cursor-theme 'Layan-cursors'
+} &
 
 # ###################### NEMO SETTINGS ###################### #
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 
 # ###################### START DAEMONS ###################### #
 # waybar daemon
-$scripts/launch_waybar &
+sleep 1 && $scripts/launch_waybar &
 $scripts/dynamic &
 # notification daemon
 swaync &
@@ -51,18 +54,53 @@ mpd &
 # sleep 1
 mpd-mpris &
 # wallpaper daemon
-swww query || swww-daemon -f xrgb &
+if ! awww query &>/dev/null; then
+    awww-daemon -f xrgb &
+    sleep 0.5
+fi
+LAST_WALL="${XDG_CACHE_HOME:-$HOME/.cache}/awww_last_wall"
+if [ -f "$LAST_WALL" ] && [ -f "$(cat "$LAST_WALL")" ]; then
+    $scripts/wall "$(cat "$LAST_WALL")" &
+else
+    $scripts/wall "$(ls ~/Pictures/Wallpapers/* | shuf -n1)" &
+fi
 
-# effects
-$scripts/tools/rgb &
+# NUEVO: RGB effects - COMENTADO para ahorrar recursos
+# Descomenta solo si realmente lo usas
+# $scripts/tools/rgb &
 
-# Applets
+# ####################### APPLETS ####################### #
+# Solo los esenciales
 $scripts/appindicator.py &
 blueman-applet &
 nm-applet --indicator &
 
 # ########################## OTHER ########################## #
 hyprctl setcursor "Layan-cursors" 24
+
+# Clipboard history
 wl-paste --watch cliphist store &
-notify-send -a aurora "hello $(whoami)" &
+
+# Welcome notification
+notify-send -a aurora "Welcome $(whoami)" "Hyprland optimized config loaded" &
+
 libinput-gestures-setup start &
+
+# ############### PERFORMANCE OPTIMIZATIONS ############### #
+echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
+
+# Reduce swappiness para mejor performance con 12GB RAM
+sudo sysctl -q vm.swappiness=10
+
+# NUEVO: Preload aplicaciones frecuentes (OPCIONAL - usa RAM)
+preload &
+
+# #################### DEVELOPMENT TOOLS ################## #
+# NUEVO: Autostart para desarrollo (opcional)
+# Docker (si lo usas)
+# systemctl --user start docker &
+
+# SSH Agent
+# eval "$(ssh-agent -s)" &
+
+echo "Hyprland autostart completed"

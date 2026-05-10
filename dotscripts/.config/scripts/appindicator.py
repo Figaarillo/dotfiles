@@ -16,7 +16,7 @@ from gi.repository import AppIndicator3, GLib, Gtk
 APPINDICATOR_ID = "ProxyApplet"
 
 WALLS_PATH = Path("~/.config/hypr/wallpapers/").expanduser()
-WALLS_BINARY = 'swww'
+WALLS_BINARY = 'awww'
 
 CURR_WALL = 0
 
