@@ -37,7 +37,6 @@
     "tray",
     "clock",
     "custom/cycle_wall",
-    "custom/custom",
     "custom/power"
   ],
   //
@@ -53,8 +52,8 @@
     "tooltip": true,
     "exec": "echo '{\"text\":\"💧\",\"tooltip\":\"Drun | Run\"}'",
     "return-type": "json",
-    "on-click": "pkill wofi || wofi --show drun -n",
-    "on-click-right": "pkill wofi || wofi --show run -n"
+    "on-click": "pkill fuzzel || ~/.config/scripts/launcher",
+    "on-click-right": "pkill fuzzel || ~/.config/scripts/launcher --list-executables-in-path"
   },
   //
   // 
@@ -235,13 +234,11 @@
   // ==================== CLIPBOARD ==================== //
   "custom/clipboard": {
     "format": "{}",
-    "exec": "~/.config/scripts/tools/expand clipboard",
+    "exec": "echo '{\"text\":\"\",\"tooltip\":\"Clipboard | Nuke | Delete\"}'",
     "return-type": "json",
-    // Window position is managed in Hyperland config's windowrulev2
-    // Here "-l top_right -x -15 -y 10" doesn't matter as '-n' mode is used
-    "on-click": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy",
+    "on-click": "~/.config/scripts/clipboard",
     "on-click-middle": "rm -f ~/.cache/cliphist/db",
-    "on-click-right": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist delete",
+    "on-click-right": "~/.config/scripts/clipboard delete",
     "escape": true
   },
   //
@@ -249,7 +246,7 @@
   // ==================== SCREENSHOT =================== //
   "custom/screenshot": {
     "format": "{}",
-    "exec": "~/.config/scripts/tools/expand ss-icon",
+    "exec": "echo '{\"text\":\"\",\"tooltip\":\"Screenshot\"}'",
     "return-type": "json",
     "on-click": "~/.config/scripts/screenshot_full"
   },
@@ -278,7 +275,8 @@
   "custom/weather": {
     "tooltip": true,
     "format": "{}",
-    "exec": "~/.config/scripts/tools/expand weather",
+    "exec": "~/.scripts/wttr",
+    "interval": 900,
     "return-type": "json"
   },
   //
@@ -337,27 +335,16 @@
   // ==================== CICLE WALL =================== //
   "custom/cycle_wall": {
     "format": "{}",
-    "exec": "~/.config/scripts/tools/expand wall",
+    "exec": "echo '{\"text\":\"󰸌\",\"tooltip\":\"Wallpaper Next | Prev\"}'",
     "return-type": "json",
-    // "interval": 1,
     "on-click": "~/.config/scripts/tools/expand cycle",
     "on-click-right": "~/.config/scripts/tools/expand cycler"
-  },
-  //
-  //
-  // ====================== CUSTOM ===================== //
-  "custom/custom": {
-    "format": "{}",
-    "exec": "~/.config/scripts/tools/expand arrow-icon",
-    "on-click": "~/.config/scripts/tools/expand_toolbar",
-    "return-type": "json"
   },
   //
   //
   // ====================== POWER ====================== //
   "custom/power": {
     "format": "{}",
-    // "exec": "~/.scripts/tools/expand power",
     "exec": "echo '{\"text\":\"⏻\",\"tooltip\":\"Power\"}'",
     "return-type": "json",
     "on-click": "~/.config/wlogout/launch.sh"
