@@ -169,3 +169,7 @@ export PATH=/home/figarillo/.opencode/bin:$PATH
 
 # API keys — kept in ~/.secrets (not tracked by git)
 [ -f ~/.secrets ] && source ~/.secrets
+
+
+# Load Angular CLI autocompletion.
+command -v ng >/dev/null && source <(ng completion script)
