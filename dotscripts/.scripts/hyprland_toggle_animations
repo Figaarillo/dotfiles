@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-state=$(hyprctl getoption animations:enabled | awk '/int:/{print $2}')
+state=$(hyprctl getoption animations:enabled | awk '/^(bool|int):/{print $2}')
 
-if [ "$state" = "1" ]; then
-    hyprctl keyword animations:enabled false
+if [ "$state" = "true" ] || [ "$state" = "1" ]; then
+    hyprctl eval 'hl.config({ animations = { enabled = false } })'
     notify-send -a hyprland "Animations" "Disabled"
 else
-    hyprctl keyword animations:enabled true
+    hyprctl eval 'hl.config({ animations = { enabled = true } })'
     notify-send -a hyprland "Animations" "Enabled"
 fi

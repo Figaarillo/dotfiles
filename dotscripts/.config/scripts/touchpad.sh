@@ -24,7 +24,7 @@ enable_touchpad() {
 	# printf "$(notify-send '.  Touchpad Enabled  .' -p)" >"$NOTIFICATION_ID2"
 	notify-send -p -r $nid '.  Touchpad Enabled  .' >$NOTIFYID
 
-	hyprctl keyword "device:$HYPRLAND_DEVICE:enabled" true
+	hyprctl eval "hl.device({ name = \"$HYPRLAND_DEVICE\", enabled = true })"
 }
 
 disable_touchpad() {
@@ -32,7 +32,7 @@ disable_touchpad() {
 
 	notify-send -u normal -p -r $nid "Touchpad Disabled" >$NOTIFYID
 
-	hyprctl keyword "device:$HYPRLAND_DEVICE:enabled" false
+	hyprctl eval "hl.device({ name = \"$HYPRLAND_DEVICE\", enabled = false })"
 }
 
 if ! [ -f "$STATUS_FILE" ]; then
