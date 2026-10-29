@@ -166,6 +166,9 @@ cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox fuz
 
 # 4. System configs (/etc): pacman, makepkg, zram, journald, mirrors, initramfs, GRUB
 sudo ~/dotfiles/system/install.sh
+
+# 5. Zen Browser prefs (open Zen once first so the profile exists)
+~/dotfiles/zen/link.sh
 ```
 
 Reboot, then check:
@@ -174,6 +177,7 @@ Reboot, then check:
 - [ ] `systemctl --failed` and `systemctl --user --failed` → empty
 - [ ] `sysctl vm.swappiness` → `180`
 - [ ] `notify-send test` → notification shows up (SwayNC)
+- [ ] Zen opens in compact mode; `about:config` → `browser.tabs.unloadOnLowMemory` is `true`
 
 Not covered by the lists, install by hand:
 
@@ -339,6 +343,7 @@ dotfiles/
 ├── dotscripts/     → shell scripts (~/.scripts/ and ~/.config/scripts/)
 ├── waybar/         → Waybar config and styles
 ├── fuzzel/         → Fuzzel launcher config
+├── zen/            → NOT stowed: Zen user.js + link.sh (profile folder has a random name)
 ├── wofi/           → Wofi launcher styles (previous launcher)
 ├── kitty/          → Kitty terminal config
 ├── zsh/            → Zsh config and aliases
