@@ -160,9 +160,8 @@ sudo pacman -S --needed - < ~/dotfiles/system/pkglist-intel.txt
 yay -S --needed - < ~/dotfiles/system/pkglist-aur.txt
 
 # 3. User configs (symlinks into $HOME)
-# (nemo/ is left out on purpose: local/ already ships the same nemo action and stow aborts on duplicates)
 cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox geany gtk hypr kitty \
-  local mouse-icons neofetch nvim starship swaync thunar tmux vscodium waybar wlogout wofi zsh
+  mouse-icons nemo neofetch nvim starship swaync thunar tmux vscodium waybar wlogout wofi zsh
 # If stow reports conflicts, delete the default files it names (e.g. ~/.config/hypr/hyprland.conf) and retry.
 
 # 4. System configs (/etc): pacman, makepkg, zram, journald, mirrors, initramfs, GRUB
