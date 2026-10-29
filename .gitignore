@@ -8,3 +8,4 @@ autostart/.config/autostart/jetbrains-toolbox.desktop
 autostart/.config/autostart/jetbrains-toolbox.desktop
 autostart/.config/autostart/megasync.desktop
 autostart/.config/autostart/jetbrains-toolbox.desktop
+geany/.config/geany/geany_socket_*
