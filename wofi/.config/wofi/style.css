@@ -10,7 +10,7 @@ window {
 window {
   margin: 0px;
   border: 2px solid #cba6f7;
-  background-color: transparent;
+  background-color: rgba(30, 30, 46, 0.95);
   border-radius: 16px;
 }
 
