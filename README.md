@@ -162,7 +162,7 @@ yay -S --needed - < ~/dotfiles/system/pkglist-aur.txt
 # 3. User configs (symlinks into $HOME)
 cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox fuzzel geany gtk hypr kitty \
   mouse-icons nemo neofetch nvim starship swaync thunar tmux vscodium waybar wlogout wofi zsh
-# If stow reports conflicts, delete the default files it names (e.g. ~/.config/hypr/hyprland.conf) and retry.
+# If stow reports conflicts, delete the default files it names (e.g. ~/.config/hypr/hyprland.lua) and retry.
 
 # 4. System configs (/etc): pacman, makepkg, zram, journald, mirrors, initramfs, GRUB
 sudo ~/dotfiles/system/install.sh
@@ -325,16 +325,17 @@ sudo dconf update
 dotfiles/
 ├── hypr/           → Hyprland config
 │   └── .config/hypr/
-│       ├── hyprland.conf
+│       ├── hyprland.lua    → entry point (Hyprland 0.57+ Lua config)
 │       └── configs/
 │           ├── autostart       → startup script
-│           ├── decorations.conf
-│           ├── animations.conf
-│           ├── keybindings.conf
-│           ├── rules.conf
-│           ├── env.conf
-│           ├── monitor.conf
-│           └── override.conf   → runtime toggles (clean mode, etc.)
+│           ├── vars.lua        → apps and paths shared by the other files
+│           ├── decorations.lua
+│           ├── animations.lua  → spring curves (iOS-style)
+│           ├── keybindings.lua
+│           ├── rules.lua
+│           ├── env.lua
+│           ├── monitor.lua
+│           └── cleanmode.lua   → clean mode, toggled by a flag file (SUPER+ALT+Z)
 ├── dotscripts/     → shell scripts (~/.scripts/ and ~/.config/scripts/)
 ├── waybar/         → Waybar config and styles
 ├── fuzzel/         → Fuzzel launcher config
