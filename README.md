@@ -144,6 +144,55 @@ Wallpapers are read from `~/Pictures/Wallpapers/`. The last used wallpaper is re
 
 ## Installation
 
+### Restore this machine (quick path)
+
+Rebuilds the current setup on a fresh Arch install. Assumes a **btrfs** root, **GRUB** and **zram** (all defaults in `archinstall`).
+
+```sh
+# 1. Base tools + yay
+sudo pacman -S --needed git base-devel stow
+git clone git@github.com:Figaarillo/dotfiles.git ~/dotfiles
+git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin && (cd /tmp/yay-bin && makepkg -si)
+
+# 2. Packages (pkglist-intel.txt only on Intel CPU/GPU)
+sudo pacman -S --needed - < ~/dotfiles/system/pkglist-repo.txt
+sudo pacman -S --needed - < ~/dotfiles/system/pkglist-intel.txt
+yay -S --needed - < ~/dotfiles/system/pkglist-aur.txt
+
+# 3. User configs (symlinks into $HOME)
+# (nemo/ is left out on purpose: local/ already ships the same nemo action and stow aborts on duplicates)
+cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox geany gtk hypr kitty \
+  local mouse-icons neofetch nvim starship swaync thunar tmux vscodium waybar wlogout wofi zsh
+# If stow reports conflicts, delete the default files it names (e.g. ~/.config/hypr/hyprland.conf) and retry.
+
+# 4. System configs (/etc): pacman, makepkg, zram, journald, mirrors, initramfs, GRUB
+sudo ~/dotfiles/system/install.sh
+```
+
+Reboot, then check:
+
+- [ ] `systemd-analyze` → userspace boot well under a minute
+- [ ] `systemctl --failed` and `systemctl --user --failed` → empty
+- [ ] `sysctl vm.swappiness` → `180`
+- [ ] `notify-send test` → notification shows up (SwayNC)
+
+Not covered by the lists, install by hand:
+
+- **MEGAsync**: comes from MEGA's own repo. Install it from mega.nz and it adds the repo to `pacman.conf`. `install.sh` keeps that block on re-runs.
+- **ttf-maple**: removed from AUR, so grab it from its upstream releases.
+- Shell plugins, GTK theme and cursor: see the sections below.
+
+When an update breaks, read [docs/arch-maintenance.md](docs/arch-maintenance.md) first.
+
+To refresh the package lists after installing or removing things:
+
+```sh
+pacman -Qqen > system/pkglist-repo.txt   # then move hardware/MEGA packages out by hand
+pacman -Qqem > system/pkglist-aur.txt
+```
+
+The sections below explain each piece individually.
+
 ### Base dependencies
 
 ```sh
@@ -296,5 +345,11 @@ dotfiles/
 ├── wlogout/        → Logout screen
 ├── nvim/           → Neovim config
 ├── starship/       → Starship prompt
-└── gtk/            → GTK settings
+├── gtk/            → GTK settings
+├── system/         → NOT stowed: /etc configs + install.sh + package lists
+│   ├── install.sh
+│   ├── pkglist-repo.txt / pkglist-intel.txt / pkglist-aur.txt
+│   └── etc/        → mirrors /etc (pacman, makepkg, sysctl, zram, journald, reflector, mkinitcpio, grub)
+└── docs/
+    └── arch-maintenance.md → known breakages and fixes
 ```
