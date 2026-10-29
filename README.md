@@ -29,7 +29,7 @@
 |----------|------|
 | Compositor | [Hyprland](https://hyprland.org/) 0.54 |
 | Bar | [Waybar](https://github.com/Alexays/Waybar) |
-| Launcher | [Wofi](https://hg.sr.ht/~scoopta/wofi) |
+| Launcher | [Fuzzel](https://codeberg.org/dnkl/fuzzel) |
 | Notifications | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) |
 | Terminal | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | Shell | Zsh + [Oh My Zsh](https://ohmyz.sh/) + [Starship](https://starship.rs/) |
@@ -160,7 +160,7 @@ sudo pacman -S --needed - < ~/dotfiles/system/pkglist-intel.txt
 yay -S --needed - < ~/dotfiles/system/pkglist-aur.txt
 
 # 3. User configs (symlinks into $HOME)
-cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox geany gtk hypr kitty \
+cd ~/dotfiles && stow -t ~ autostart bat btop cava config dotscripts firefox fuzzel geany gtk hypr kitty \
   mouse-icons nemo neofetch nvim starship swaync thunar tmux vscodium waybar wlogout wofi zsh
 # If stow reports conflicts, delete the default files it names (e.g. ~/.config/hypr/hyprland.conf) and retry.
 
@@ -337,7 +337,8 @@ dotfiles/
 │           └── override.conf   → runtime toggles (clean mode, etc.)
 ├── dotscripts/     → shell scripts (~/.scripts/ and ~/.config/scripts/)
 ├── waybar/         → Waybar config and styles
-├── wofi/           → Wofi launcher styles
+├── fuzzel/         → Fuzzel launcher config
+├── wofi/           → Wofi launcher styles (previous launcher)
 ├── kitty/          → Kitty terminal config
 ├── zsh/            → Zsh config and aliases
 ├── swaync/         → Notification center config

@@ -70,8 +70,8 @@ bind("SUPER + SHIFT + O", exec("obsidian"))
 bind("SUPER + V",     exec("pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy"))
 bind("SUPER + N",     exec("swaync-client -t -sw"))
 -- Tap SUPER alone to open the launcher
-bind("Super_L",       exec("pkill wofi || " .. v.launcher), { release = true })
-bind("SUPER + space", exec("pkill wofi || " .. v.launcher_alt))
+bind("Super_L",       exec("pkill fuzzel || " .. v.launcher), { release = true })
+bind("SUPER + space", exec("pkill fuzzel || " .. v.launcher_alt))
 
 
 -- ################### OTHER DISPATCHERS ################### --
