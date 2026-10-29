@@ -28,8 +28,9 @@ hl.config({
         gaps_out    = 10,
         border_size = 2,
         col = {
-            active_border         = { colors = { "rgba(cba6f7ff)", "rgba(89b4faff)", "rgba(94e2d5ff)" }, angle = 10 },
-            inactive_border       = "rgba(313244ff)",
+            -- Liquid Glass edge: a light specular rim fading into the accent
+            active_border         = { colors = { "rgba(ffffff59)", "rgba(cba6f740)" }, angle = 135 },
+            inactive_border       = "rgba(ffffff14)",
             nogroup_border        = "rgba(89dcebff)",
             nogroup_border_active = "rgba(f9e2afff)",
         },

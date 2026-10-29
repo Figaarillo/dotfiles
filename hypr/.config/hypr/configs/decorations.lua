@@ -7,7 +7,7 @@
 hl.config({
     decoration = {
         -- ############### ROUNDING OF THE CORNERS ############### --
-        rounding = 12,
+        rounding = 16, -- iOS-like large corners
 
         -- ####################### SHADOWS ####################### --
         shadow = {
@@ -42,7 +42,7 @@ hl.config({
             noise             = 0,    -- no noise (saves computation)
             contrast          = 1.0,
             brightness        = 1.0,
-            vibrancy          = 0.0,
+            vibrancy          = 0.18, -- Liquid Glass: saturate what's behind (cheap, no extra passes)
             vibrancy_darkness = 0.0,
 
             special           = false,
