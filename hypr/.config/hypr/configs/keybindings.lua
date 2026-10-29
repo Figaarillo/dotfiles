@@ -66,8 +66,8 @@ bind("SUPER + O",         exec(v.office))
 bind("SUPER + SHIFT + O", exec("obsidian"))
 
 
--- ############## WOFI AND NOTIFICATION BINDS ############## --
-bind("SUPER + V",     exec("pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy"))
+-- ############# LAUNCHER AND NOTIFICATION BINDS ############# --
+bind("SUPER + V",     exec(scripts .. "/clipboard"))
 bind("SUPER + N",     exec("swaync-client -t -sw"))
 -- Tap SUPER alone to open the launcher
 bind("Super_L",       exec("pkill fuzzel || " .. v.launcher), { release = true })
@@ -172,7 +172,7 @@ bind("XF86PowerOff", exec("~/.scripts/lock"))
 bind("XF86Mail",       exec(v.gmail))
 bind("XF86HomePage",   exec(v.explorer .. " ~/"))
 bind("XF86Calculator", exec("qalculate-gtk"))
-bind("XF86Search",     exec("wofi"))
+bind("XF86Search",     exec(v.launcher))
 
 
 -- ######################## SWITCHES ####################### --

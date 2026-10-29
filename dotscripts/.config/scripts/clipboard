@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Clipboard history picker (SUPER+V and waybar's clipboard module).
+# Usage: clipboard        -> copy the picked entry
+#        clipboard delete -> remove the picked entry from history
+pkill fuzzel && exit 0
+
+pick() {
+    cliphist list | ~/.config/scripts/launcher --dmenu --no-icons \
+        --anchor top-right --x-margin 15 --y-margin 10 \
+        --prompt "$1  " --placeholder "$2"
+}
+
+if [ "$1" = "delete" ]; then
+    pick "󰆴" "Delete from history" | cliphist delete
+else
+    pick "󰅌" "Clipboard" | cliphist decode | wl-copy
+fi

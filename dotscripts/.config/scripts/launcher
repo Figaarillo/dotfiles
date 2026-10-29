@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+args=()
+
+# Clean mode disables blur, so the glass background turns see-through.
+# Swap it for a solid one while the flag from hyprland_toggle_opacity exists.
+[ -f /tmp/hypr_cleanmode ] && args+=(--background=1e1e2ef5)
+
+# Click outside to close: with on-demand focus, fuzzel exits when it loses
+# keyboard focus. But follow_mouse=1 moves focus on hover, which would close it
+# just by moving the mouse, so only clicks move focus (2) while fuzzel is open.
+prev=$(hyprctl getoption input:follow_mouse -j | jq .int)
+restore() { hyprctl eval "hl.config({ input = { follow_mouse = ${prev:-1} } })" >/dev/null; }
+# Restore even if this wrapper (not fuzzel) gets killed
+trap 'kill $pid 2>/dev/null; restore; exit 130' INT TERM HUP
+
+hyprctl eval 'hl.config({ input = { follow_mouse = 2 } })' >/dev/null
+
+# Explicit <&0: a backgrounded job in a script gets /dev/null as stdin,
+# which would empty the --dmenu pickers (clipboard, emoji)
+fuzzel --keyboard-focus=on-demand "${args[@]}" "$@" <&0 &
+pid=$!
+wait $pid
+status=$?
+
+restore
+exit $status

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sed '1,/^### DATA ###$/d' $0 | awk '{print $1}'| wofi --show dmenu -i -w 4 --conf $HOME/.config/wofi/emoji/config -s $HOME/.config/wofi/emoji/style.css | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+# Full lines are shown so you can search by name ("fire", "heart"...); only the emoji is copied
+pkill fuzzel && exit 0
+sed '1,/^### DATA ###$/d' $0 | ~/.config/scripts/launcher --dmenu --no-icons --prompt "󰞅  " --placeholder "Search emoji" | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 exit
 ### DATA ###
 😀 grinning face face smile happy joy :D grin
