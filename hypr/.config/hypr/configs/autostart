@@ -47,8 +47,6 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 # waybar daemon
 sleep 1 && $scripts/launch_waybar &
 $scripts/dynamic &
-# notification daemon
-swaync &
 # music daemon
 mpd &
 # sleep 1
