@@ -1,38 +1,60 @@
+/** ********** Glass ********** **/
+/* Translucent tint over the compositor blur (layer rule "logout_dialog").
+ * Clean mode has no blur, so style-clean.css overrides these. */
+@define-color backdrop rgba(17, 17, 27, 0.45);
+@define-color glass rgba(255, 255, 255, 0.06);
+@define-color glass_border rgba(255, 255, 255, 0.10);
+
 /** ********** Fonts ********** **/
 * {
   font-family: "JetBrains Mono", "CaskaydiaCove Nerd Font", "Lato", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
 /** ********** Main Window ********** **/
 window {
-  background-color: rgba(0, 0, 0, 0.85);
-  transition: ease-in 0.5s;
+  background-color: @backdrop;
 }
 
 button>label {
-  margin-top: 100px;
+  margin-top: 110px;
 }
 
 /** ********** Buttons ********** **/
 button {
-  background-color: #161925;
-  color: #cdd6f4;
-  border: 2px solid #282838;
-  border-radius: 20px;
+  background-color: @glass;
+  color: #a6adc8;
+  border: 1px solid @glass_border;
+  border-radius: 34px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 35%;
-  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background-size: 28%;
+  /* Liquid Glass specular rim */
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  /* Overshooting bezier: the closest GTK gets to an iOS spring */
+  transition: background-color 0.35s cubic-bezier(.34, 1.56, .64, 1),
+              background-size 0.35s cubic-bezier(.34, 1.56, .64, 1),
+              border-color 0.2s ease, color 0.2s ease;
 }
 
 button:focus,
 button:active,
 button:hover {
-  color: #FFFFFF;
-  background-color: #b4befe;
+  color: #ffffff;
+  background-color: rgba(203, 166, 247, 0.22);
+  border-color: rgba(203, 166, 247, 0.55);
+  background-size: 32%; /* the icon "breathes" in on focus */
   outline-style: none;
+}
+
+/* Destructive actions get a red accent instead */
+#shutdown:focus,
+#shutdown:hover,
+#reboot:focus,
+#reboot:hover {
+  background-color: rgba(243, 139, 168, 0.22);
+  border-color: rgba(243, 139, 168, 0.55);
 }
 
 /** ********** Icons ********** **/

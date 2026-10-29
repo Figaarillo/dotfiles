@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# Started by swaync.service (drop-in in the swaync stow package).
+# Clean mode has no blur, so the glass style needs solid surfaces.
+style=~/.config/swaync/style.css
+[ -f /tmp/hypr_cleanmode ] && style=~/.config/swaync/style-clean.css
+
+exec /usr/bin/swaync -s "$style"

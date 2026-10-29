@@ -2,5 +2,9 @@
 
 killall -q waybar
 
+# Clean mode has no blur, so the glass style needs solid surfaces
+style=~/.config/waybar/style.css
+[ -f /tmp/hypr_cleanmode ] && style=~/.config/waybar/style-clean.css
+
 # env GTK_DEBUG=interactive
-waybar -l info -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css > /tmp/waybar.log 2>&1 & disown
+waybar -l info -c ~/.config/waybar/config.jsonc -s "$style" > /tmp/waybar.log 2>&1 & disown

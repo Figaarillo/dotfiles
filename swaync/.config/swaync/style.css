@@ -2,32 +2,49 @@
  * vim: ft=less
  */
 
-@define-color noti-bg rgb(22, 25, 37);
-@define-color cc-bg alpha(@noti-bg, 0.9);
+/* Glass without blur: Hyprland layer rules don't match swaync 0.12 (GTK4),
+ * so the tint is denser than waybar/fuzzel to stay readable over anything.
+ * style-clean.css makes it fully solid in clean mode. */
+@define-color glass rgba(30, 30, 46, 0.85);
+@define-color glass_card rgba(255, 255, 255, 0.05);
+@define-color glass_card_hover rgba(255, 255, 255, 0.09);
+@define-color glass_border rgba(255, 255, 255, 0.08);
+@define-color glass_button rgba(255, 255, 255, 0.08);
+@define-color glass_button_hover rgba(255, 255, 255, 0.15);
 
-@define-color noti-border-color @noti-bg;
-@define-color noti-bg-hover rgb(39,44,66);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color text #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color dim #7f849c;
+@define-color mauve #cba6f7;
+@define-color teal #94e2d5;
+@define-color red #f38ba8;
+@define-color crust #11111b;
 
-@define-color bg-selected rgb(137,180,250);
+* {
+  font-family: 'JetBrains Mono', 'CaskaydiaCove Nerd Font', monospace;
+}
 
 
 /* Window behind control center and on all other monitors */
 .blank-window {
   background: alpha(black, 0);
-
 }
 
 /* Main panel */
 .control-center {
-  background: @cc-bg;
-  border-radius: 16px;
-  border: 2px solid #cba6f7;
+  background: @glass;
+  border: 1px solid @glass_border;
+  border-radius: 28px;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+  padding: 6px;
 }
 
 .control-center-list {
   background: transparent;
+}
+
+.control-center-list-placeholder {
+  color: @dim;
 }
 
 .floating-notifications {
@@ -40,7 +57,6 @@
   outline: none;
   background: transparent;
   border-radius: 16px;
-  transition: all 0.2s ease-in-out;
 }
 
 .notification-row:focus,
@@ -49,56 +65,72 @@
   background: transparent;
 }
 
+/* GTK4 wrappers around each card: keep them invisible */
+.notification-background,
+.notification-group,
 .notification {
   box-shadow: none;
   outline: none;
   padding: 0;
   margin: 0;
-}
-
-/* specific urgency colors */
-.critical .summary {
-  color: #f38ba8;
-}
-
-.notification-content {
-  outline: none;
-  margin: 10px;
-  padding:8px;
-  border-radius: 16px;
-  border: 2px solid #cba6f7;
-  background: @cc-bg;
-}
-
-.control-center .notification-content {
-  border: none;
   background: transparent;
 }
 
+/* Floating popup: a glass card of its own */
+.notification-content {
+  outline: none;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 22px;
+  border: 1px solid @glass_border;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+  background: @glass;
+}
+
+/* Inside the panel: lighter cards over the panel's glass */
+.control-center .notification-content {
+  margin: 4px 6px;
+  background: @glass_card;
+  transition: background 0.2s ease;
+}
+
+.control-center .notification-row:hover .notification-content {
+  background: @glass_card_hover;
+}
+
+/* Urgency: an accent edge instead of a full recolor */
+.critical .notification-content {
+  border-color: alpha(@red, 0.6);
+}
+
+.critical .summary {
+  color: @red;
+}
+
 .close-button {
-  background: @noti-close-bg;
-  color: white;
+  background: @glass_button;
+  color: @text;
   text-shadow: none;
   padding: 0;
-  margin-top: 15px;
-  margin-right: 15px;
+  margin-top: 14px;
+  margin-right: 14px;
   box-shadow: none;
   border: none;
   border-radius: 100%;
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 22px;
+  min-height: 22px;
+  transition: background 0.15s ease;
 }
 
 .close-button:hover {
   box-shadow: none;
-  background: @noti-close-bg-hover;
-  transition: all 0.15s ease-in-out;
+  background: alpha(@red, 0.5);
   border: none;
 }
 
 .control-center .close-button {
-  margin-top: 4px;
-  margin-right: 4px;
+  margin-top: 8px;
+  margin-right: 10px;
 }
 
 .notification-default-action,
@@ -106,54 +138,62 @@
   padding: 0;
   margin: 0;
   box-shadow: none;
-  color: white;
+  color: @text;
   outline: none;
   background: transparent;
   border: none;
 }
 
-.notification-default-action:hover,
+/* Action buttons (e.g. "Reply", "Open") */
+.notification-action {
+  margin: 4px;
+  padding: 6px;
+  border-radius: 12px;
+  background: @glass_button;
+}
+
 .notification-action:hover {
-  -gtk-icon-effect: none;
+  background: @glass_button_hover;
 }
 
 .image {
-  border-radius: 100%;
+  border-radius: 14px;
+  margin-right: 4px;
 }
 
 .body-image {
-  background-color: white;
-  border-radius: 100%;
+  background-color: transparent;
+  border-radius: 12px;
+  margin-top: 6px;
 }
 
 .summary {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   background: transparent;
-  color: white;
+  color: @text;
   text-shadow: none;
 }
 
 .time {
-  font-size: 13px;
+  font-size: 11px;
   background: transparent;
-  color: white;
+  color: @dim;
   text-shadow: none;
-  margin-right: 5px;
-
+  margin-right: 30px;
 }
 
 .body {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: normal;
   background: transparent;
-  color: white;
+  color: @subtext;
   text-shadow: none;
 }
 
 /* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
-  color: white;
+  color: @text;
   text-shadow: none;
 }
 
@@ -162,62 +202,78 @@
 
 /* Title widget */
 .widget-title {
-  margin: 8px;
-  font-size: 1.5rem;
+  margin: 10px 12px 6px 12px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: @text;
 }
+
 .widget-title > button {
-  font-size: initial;
-  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: @text;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @glass_button;
+  border: 1px solid @glass_border;
   box-shadow: none;
   border-radius: 12px;
+  padding: 4px 12px;
+  transition: background 0.15s ease;
 }
+
 .widget-title > button:hover {
-  background: @noti-bg-hover;
+  background: alpha(@red, 0.35);
 }
 
 /* DND widget */
 .widget-dnd {
-  margin: 8px;
-  font-size: 1rem;
+  margin: 6px 12px 10px 12px;
+  font-size: 0.95rem;
+  color: @subtext;
 }
+
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @glass_button;
+  border: 1px solid @glass_border;
   box-shadow: none;
+  transition: background 0.2s ease;
 }
+
 .widget-dnd > switch:checked {
-  background: @bg-selected;
+  background: @mauve;
 }
+
 .widget-dnd > switch slider {
-  background: @noti-bg-hover;
-  border-radius: 12px;
+  background: @text;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
 /* Label widget */
 .widget-label {
   margin: 8px;
 }
+
 .widget-label > label {
   font-size: 1.1rem;
 }
 
 /* Mpris widget */
-.widget-mpris {
-  /* The parent to all players */
-}
 .widget-mpris-player {
-  padding: 8px;
+  padding: 10px;
   margin: 8px;
+  border-radius: 16px;
+  background: @glass_card;
 }
+
 .widget-mpris-title {
   font-weight: bold;
   font-size: 1rem;
 }
+
 .widget-mpris-subtitle {
- font-size: 0.85rem;
+  font-size: 0.85rem;
+  color: @subtext;
 }

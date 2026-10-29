@@ -1,0 +1,7 @@
+/* Clean mode (no blur): same style with solid surfaces.
+ * Picked by ~/.config/wlogout/launch.sh when /tmp/hypr_cleanmode exists. */
+@import "style.css";
+
+@define-color backdrop rgba(17, 17, 27, 0.92);
+@define-color glass rgba(49, 50, 68, 0.96);
+@define-color glass_border rgba(255, 255, 255, 0.10);

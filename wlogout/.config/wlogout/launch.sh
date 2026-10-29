@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 # kill all running
-pkill wofi &
+pkill fuzzel &
 
 LAYOUT="$HOME/.config/wlogout/layout"
 STYLE="$HOME/.config/wlogout/style.css"
+# Clean mode has no blur, so the glass style needs solid surfaces
+[ -f /tmp/hypr_cleanmode ] && STYLE="$HOME/.config/wlogout/style-clean.css"
 
 if [[ ! $(pidof wlogout) ]]; then
 	wlogout --layout ${LAYOUT} --css ${STYLE} \

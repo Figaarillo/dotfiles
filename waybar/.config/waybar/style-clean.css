@@ -1,0 +1,7 @@
+/* Clean mode (no blur): same style with solid surfaces.
+ * Picked by ~/.config/scripts/launch_waybar when /tmp/hypr_cleanmode exists. */
+@import "style.css";
+
+@define-color glass rgba(30, 30, 46, 0.96);
+@define-color glass_border rgba(255, 255, 255, 0.10);
+@define-color glass_hover rgba(69, 71, 90, 0.96);

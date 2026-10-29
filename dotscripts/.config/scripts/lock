@@ -1,24 +1,38 @@
 #!/usr/bin/bash
+# Glass: blurred wallpaper + translucent ring and a thin white edge,
+# same palette as waybar/fuzzel/wlogout (Catppuccin Mocha, mauve accent)
 swaylock \
-	--image ~/Pictures/Wallpapers/1.jpg \
-	--indicator \
-	--clock \
-	--inside-wrong-color f38ba8 \
-	--ring-wrong-color 161925 \
-	--inside-clear-color a6e3a1 \
-	--ring-clear-color 161925 \
-	--inside-ver-color 89b4fa \
-	--ring-ver-color 161925 \
-	--text-color f5c2e7 \
-	--indicator-radius 100 \
-	--indicator-thickness 5 \
-	--effect-blur 9x8 \
-	--effect-vignette 0.6:0.6 \
-	--ring-color 161925 \
-	--key-hl-color f5c2e7 \
-	--line-color 313244 \
-	--inside-color 00161925 \
-	--separator-color 00000000 \
-	--fade-in 0.2 &
+  --image ~/Pictures/Wallpapers/1.jpg \
+  --effect-blur 9x8 \
+  --effect-vignette 0.5:0.5 \
+  --clock \
+  --timestr "%H:%M" \
+  --datestr "%A, %d %B" \
+  --font "JetBrains Mono" \
+  --font-size 26 \
+  --indicator \
+  --indicator-idle-visible \
+  --indicator-radius 110 \
+  --indicator-thickness 4 \
+  --inside-color 1e1e2e66 \
+  --ring-color ffffff26 \
+  --line-color 00000000 \
+  --separator-color 00000000 \
+  --text-color cdd6f4 \
+  --key-hl-color cba6f7 \
+  --bs-hl-color f38ba8 \
+  --caps-lock-key-hl-color fab387 \
+  --inside-ver-color 89b4fa33 \
+  --ring-ver-color 89b4fa \
+  --text-ver-color cdd6f4 \
+  --inside-wrong-color f38ba833 \
+  --ring-wrong-color f38ba8 \
+  --text-wrong-color f38ba8 \
+  --inside-clear-color 94e2d533 \
+  --ring-clear-color 94e2d5 \
+  --text-clear-color cdd6f4 \
+  --layout-bg-color 1e1e2e66 \
+  --layout-text-color cdd6f4 \
+  --fade-in 0.2 &
 
 # sleep 2; ~/.config/hypr/scripts/screenshot_full
