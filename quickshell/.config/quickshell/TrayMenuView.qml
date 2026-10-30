@@ -19,7 +19,7 @@ IslandView {
 
     // DBus menus mark mnemonics with "_" (and some Qt apps with "&")
     function clean(text) {
-        return text.replace(/_(?!_)/g, "").replace(/&(?!&)/g, "");
+        return (text ?? "").replace(/_(?!_)/g, "").replace(/&(?!&)/g, "");
     }
 
     function activate(entry) {
@@ -81,28 +81,29 @@ IslandView {
             readonly property var e: modelData
 
             width: ListView.view.width
-            height: e.isSeparator ? 9 : 34
+            // Entries can be destroyed under us (menu refresh, reload)
+            height: e?.isSeparator ? 9 : 34
 
             Rectangle {
-                visible: entryRow.e.isSeparator
+                visible: entryRow.e?.isSeparator
                 anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter; leftMargin: 10; rightMargin: 10 }
                 height: 1
                 color: Theme.glassBorder
             }
 
             Rectangle {
-                visible: !entryRow.e.isSeparator
+                visible: !entryRow.e?.isSeparator
                 anchors.fill: parent
                 radius: 10
-                color: entryArea.containsMouse && entryRow.e.enabled ? Theme.glassCardHover : "transparent"
-                opacity: entryRow.e.enabled ? 1 : 0.4
+                color: entryArea.containsMouse && entryRow.e?.enabled ? Theme.glassCardHover : "transparent"
+                opacity: entryRow.e?.enabled ? 1 : 0.4
 
                 Text {
                     id: checkMark
                     anchors { left: parent.left; leftMargin: 10; verticalCenter: parent.verticalCenter }
                     width: 16
-                    visible: entryRow.e.buttonType !== QsMenuButtonType.None
-                    text: entryRow.e.checkState === Qt.Checked ? Icons.check : ""
+                    visible: entryRow.e?.buttonType !== QsMenuButtonType.None
+                    text: entryRow.e?.checkState === Qt.Checked ? Icons.check : ""
                     color: Theme.mauve
                     font.family: Theme.font
                     font.pixelSize: 14
@@ -112,8 +113,8 @@ IslandView {
                     id: entryIcon
                     anchors { left: checkMark.visible ? checkMark.right : parent.left; leftMargin: checkMark.visible ? 6 : 10; verticalCenter: parent.verticalCenter }
                     implicitSize: 16
-                    visible: entryRow.e.icon !== ""
-                    source: entryRow.e.icon
+                    visible: entryRow.e?.icon !== ""
+                    source: entryRow.e?.icon
                 }
 
                 Text {
@@ -123,7 +124,7 @@ IslandView {
                         right: chevron.left; rightMargin: 8
                         verticalCenter: parent.verticalCenter
                     }
-                    text: root.clean(entryRow.e.text)
+                    text: root.clean(entryRow.e?.text)
                     color: Theme.text
                     font.family: Theme.font
                     font.pixelSize: Theme.fontSize - 1
@@ -133,7 +134,7 @@ IslandView {
                 Text {
                     id: chevron
                     anchors { right: parent.right; rightMargin: 10; verticalCenter: parent.verticalCenter }
-                    text: entryRow.e.hasChildren ? Icons.chevronRight : ""
+                    text: entryRow.e?.hasChildren ? Icons.chevronRight : ""
                     color: Theme.overlay1
                     font.family: Theme.font
                     font.pixelSize: 14
@@ -143,7 +144,7 @@ IslandView {
                     id: entryArea
                     anchors.fill: parent
                     hoverEnabled: true
-                    cursorShape: entryRow.e.enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
+                    cursorShape: entryRow.e?.enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
                     onClicked: root.activate(entryRow.e)
                 }
             }
