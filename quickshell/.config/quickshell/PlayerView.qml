@@ -1,14 +1,50 @@
 import QtQuick
+import Quickshell
+import Quickshell.Wayland
+import Quickshell.Hyprland
 import Quickshell.Widgets
 
 IslandView {
     id: root
     mode: "player"
-    preferredWidth: 460
-    preferredHeight: 156
 
     readonly property var player: Media.player
     readonly property real progress: player && player.length > 0 ? player.position / player.length : 0
+
+    // Live view of the window playing the media, e.g. a stream left on
+    // another workspace (browsers keep painting it). Frames are pulled at
+    // ~24 fps instead of a 60 fps live feed, and only while watching.
+    property bool watching: false
+    readonly property var window: {
+        // Browsers put the video title in the window title. Whitespace is
+        // normalized: MPRIS and the window title don't always agree on it.
+        const norm = text => text.replace(/\s+/g, " ").trim();
+        const title = norm(player?.trackTitle ?? "").slice(0, 30);
+        if (!title || player.dbusName.endsWith(".spotify")) return null; // has album art
+        return Hyprland.toplevels.values.find(t => norm(t.title).includes(title)) ?? null;
+    }
+    readonly property bool canWatch: !!window?.wayland
+    onCanWatchChanged: if (!canWatch) watching = false
+
+    readonly property int videoWidth: 560 - Theme.islandPadding * 2
+    readonly property int videoHeight: {
+        const s = live.sourceSize;
+        const aspect = live.hasContent && s.width > 0 ? s.height / s.width : 9 / 16;
+        return Math.min(300, Math.round(videoWidth * aspect));
+    }
+
+    preferredWidth: watching ? 560 : 460
+    preferredHeight: watching
+        ? Theme.islandPadding * 2 + videoHeight + 12 + info.implicitHeight
+        : 156
+
+    function focusWindow() {
+        const address = `address:0x${window.address}`;
+        Hyprland.dispatch(Hyprland.usingLua
+            ? `hl.dsp.focus({ window = '${address}' })`
+            : `focuswindow ${address}`);
+        ShellState.close();
+    }
 
     // MPRIS doesn't push position updates; poll while visible and playing
     FrameAnimation {
@@ -18,6 +54,7 @@ IslandView {
 
     ClippingRectangle {
         id: art
+        visible: !root.watching
         anchors { left: parent.left; leftMargin: Theme.islandPadding; verticalCenter: parent.verticalCenter }
         width: 124; height: 124
         radius: 18
@@ -41,12 +78,65 @@ IslandView {
         }
     }
 
-    Column {
-        anchors {
-            left: art.right; leftMargin: 16
-            right: parent.right; rightMargin: Theme.islandPadding
-            verticalCenter: parent.verticalCenter
+    ClippingRectangle {
+        id: video
+        visible: root.watching
+        anchors { top: parent.top; topMargin: Theme.islandPadding; horizontalCenter: parent.horizontalCenter }
+        width: root.videoWidth
+        height: root.videoHeight
+        radius: 14
+        color: Theme.glassCard
+
+        ScreencopyView {
+            id: live
+            anchors.fill: parent
+            live: false
+            captureSource: root.watching && root.current ? root.window?.wayland ?? null : null
         }
+
+        Timer {
+            interval: 42 // ~24 fps
+            repeat: true
+            running: root.watching && root.current
+            onTriggered: live.captureFrame()
+        }
+
+        MouseArea {
+            id: videoArea
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+            onClicked: root.focusWindow()
+        }
+
+        GlassSurface {
+            anchors { right: parent.right; bottom: parent.bottom; margins: 8 }
+            width: hint.implicitWidth + 20; height: 26; radius: 13
+            tint: Theme.islandSolid
+            opacity: videoArea.containsMouse ? 1 : 0
+            Behavior on opacity { NumberAnimation { duration: 150 } }
+            Text {
+                id: hint
+                anchors.centerIn: parent
+                text: "Ir a la ventana"
+                color: Theme.text
+                font.family: Theme.font
+                font.pixelSize: Theme.fontSize - 2
+            }
+        }
+    }
+
+    Column {
+        id: info
+        anchors {
+            left: root.watching ? parent.left : art.right
+            leftMargin: root.watching ? Theme.islandPadding : 16
+            right: parent.right; rightMargin: Theme.islandPadding
+        }
+        // A single y binding instead of swapping top/verticalCenter anchors:
+        // swapping them leaves both set for a moment, QML rejects the conflict
+        // and the column stays below the (hidden) video when going back.
+        y: root.watching ? video.y + video.height + 12 : Math.round((parent.height - height) / 2)
         spacing: 6
 
         Text {
@@ -145,6 +235,17 @@ IslandView {
                 iconSize: 18
                 enabled: !!root.player?.canGoNext
                 onClicked: root.player.next()
+            }
+
+            // Watch the playing window live
+            GlassButton {
+                anchors.verticalCenter: parent.verticalCenter
+                visible: root.canWatch
+                width: 38; height: 38; radius: 19
+                icon: Icons.monitor
+                iconSize: 17
+                active: root.watching
+                onClicked: root.watching = !root.watching
             }
         }
     }
