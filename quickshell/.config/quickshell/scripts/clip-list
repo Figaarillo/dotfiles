@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Clipboard history for the island (ClipboardView.qml).
+# cliphist only lists images as "[[ binary data 85 KiB png 614x441 ]]", so
+# decode each image once into a cache dir (named <id>.<ext>), drop the ones
+# whose entry is gone, then print the list. Thumbnails exist before the view
+# sees an entry.
+dir="$1"
+[ -n "$dir" ] || { echo "usage: clip-list <thumb-dir>" >&2; exit 1; }
+mkdir -p "$dir"
+
+list=$(cliphist list)
+
+keep=()
+while IFS= read -r line; do
+    [[ $line =~ ^([0-9]+)$'\t'\[\[\ binary\ data\ .*\ (png|jpeg|jpg|webp|gif|bmp)\ [0-9]+x[0-9]+\ \]\]$ ]] || continue
+    file="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+    keep+=("$file")
+    [ -s "$dir/$file" ] || printf '%s' "$line" | cliphist decode > "$dir/$file"
+done <<< "$list"
+
+# Thumbnails of deleted entries
+for f in "$dir"/*; do
+    [ -e "$f" ] || continue
+    name=${f##*/}
+    [[ " ${keep[*]} " == *" $name "* ]] || rm -f "$f"
+done
+
+printf '%s\n' "$list"

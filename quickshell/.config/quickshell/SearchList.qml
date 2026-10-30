@@ -17,10 +17,14 @@ Item {
     property var textFor: item => String(item)
     property var iconFor: item => ""   // image source; empty falls back to glyph
     property var glyphFor: item => ""
+    property var thumbFor: item => ""  // image file shown as a thumbnail (clipboard)
+    property var rowHeightFor: item => Theme.launcherRowHeight
 
     readonly property alias query: input.text
-    readonly property int preferredHeight: Theme.launcherInputHeight
-        + (results.length > 0 ? Math.min(results.length, maxVisible) * Theme.launcherRowHeight + 12 : 0)
+    readonly property int preferredHeight: Math.min(Theme.islandMaxHeight, Theme.launcherInputHeight
+        + (results.length > 0
+            ? results.slice(0, maxVisible).reduce((h, item) => h + rowHeightFor(item), 0) + 12
+            : 0))
 
     signal activated(var item)
     signal deleteRequested(var item)
@@ -118,23 +122,43 @@ Item {
             readonly property bool isSelected: index === root.selected
 
             width: ListView.view.width
-            height: Theme.launcherRowHeight
+            readonly property string thumb: root.thumbFor(modelData)
+
+            height: root.rowHeightFor(modelData)
             radius: 12
             color: isSelected ? Theme.glassCardHover : "transparent"
             border.color: isSelected ? Theme.glassBorder : "transparent"
             Behavior on color { ColorAnimation { duration: 120 } }
 
+            ClippingRectangle {
+                id: thumbBox
+                visible: row.thumb !== ""
+                anchors { left: parent.left; leftMargin: 8; verticalCenter: parent.verticalCenter }
+                height: parent.height - 12
+                width: Math.round(height * 1.6)
+                radius: 8
+                color: Theme.glassCard
+
+                Image {
+                    anchors.fill: parent
+                    source: row.thumb ? `file://${row.thumb}` : ""
+                    sourceSize.width: 192
+                    fillMode: Image.PreserveAspectCrop
+                    asynchronous: true
+                }
+            }
+
             IconImage {
                 id: rowIcon
                 anchors { left: parent.left; leftMargin: 12; verticalCenter: parent.verticalCenter }
                 implicitSize: 24
-                visible: source != ""
+                visible: source != "" && !thumbBox.visible
                 source: root.iconFor(row.modelData)
             }
 
             Text {
                 anchors.centerIn: rowIcon
-                visible: !rowIcon.visible
+                visible: !rowIcon.visible && !thumbBox.visible
                 text: root.glyphFor(row.modelData)
                 color: Theme.mauve
                 font.family: Theme.font
@@ -143,7 +167,7 @@ Item {
 
             Text {
                 anchors {
-                    left: rowIcon.right; leftMargin: 12
+                    left: thumbBox.visible ? thumbBox.right : rowIcon.right; leftMargin: 12
                     right: parent.right; rightMargin: 12
                     verticalCenter: parent.verticalCenter
                 }
