@@ -43,7 +43,7 @@ bind("Print",             exec(scripts .. "/screenshot_full"))
 
 
 -- ###################### EMOJI BINDS ###################### --
-bind("SUPER + period", exec(scripts .. "/emoji.sh"))
+bind("SUPER + period", exec("qs ipc call emoji toggle"))
 
 
 -- ###################### COLOR PICKER ##################### --
@@ -67,11 +67,11 @@ bind("SUPER + SHIFT + O", exec("obsidian"))
 
 
 -- ############# LAUNCHER AND NOTIFICATION BINDS ############# --
-bind("SUPER + V",     exec(scripts .. "/clipboard"))
+-- All of these open views of the quickshell dynamic island
+bind("SUPER + V",     exec("qs ipc call island toggle clipboard"))
 bind("SUPER + N",     exec("qs ipc call island toggle notifications"))
--- Tap SUPER alone to open the launcher (quickshell dynamic island)
+-- Tap SUPER alone to open the launcher
 bind("Super_L",       exec("qs ipc call island toggleLauncher"), { release = true })
-bind("SUPER + space", exec("pkill fuzzel || " .. v.launcher_alt))
 
 
 -- ################### OTHER DISPATCHERS ################### --
@@ -97,7 +97,7 @@ bind("SUPER + ALT + R",   exec("qs ipc call bar toggle")) -- Hide bar
 
 
 -- ############### LOGOUT SCREEN, LOCK, EXIT ############### --
-bind("SUPER + escape",         exec("~/.config/wlogout/launch.sh"))
+bind("SUPER + escape",         exec("qs ipc call island toggle power"))
 bind("SUPER + ALT + L",        exec(scripts .. "/lock"))
 bind("SUPER + SHIFT + escape", exec("playerctl --all-players stop; awww quit; hyprctl dispatch 'hl.dsp.exit()'"))
 

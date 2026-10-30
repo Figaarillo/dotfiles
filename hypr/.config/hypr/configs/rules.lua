@@ -112,16 +112,6 @@ rule({ name = "brave-idle",     match = { class = "^(Brave-browser)$" }, idle_in
 -- rule({ name = "blueman-mgr-float", match = { class = "^(blueman-manager)$" }, float = true })
 
 
--- ==================== WOFI ==================== --
-rule({
-    name         = "wofi",
-    match        = { class = "^(wofi)$" },
-    float        = true,
-    stay_focused = true,
-    opacity      = "0.85 0.85",
-})
-
-
 -- ==================== AMBEROL ==================== --
 rule({ name = "amberol", match = { class = "^(amberol)$" }, float = true, size = { 670, 635 }, center = true })
 
@@ -234,7 +224,7 @@ rule({
 
 -- ==================== LAYER RULES ==================== --
 -- See https://wiki.hypr.land/configuring/core/rules/layer-rules/
-for _, ns in ipairs({ "waybar", "gtk-layer-shell", "notifications", "launcher", "logout_dialog", "quickshell-bar", "quickshell-island" }) do
+for _, ns in ipairs({ "gtk-layer-shell", "quickshell-bar", "quickshell-island", "quickshell-emoji" }) do
     hl.layer_rule({ name = "blur-" .. ns, match = { namespace = "^" .. ns .. "$" }, blur = true, ignore_alpha = 0 })
 end
 

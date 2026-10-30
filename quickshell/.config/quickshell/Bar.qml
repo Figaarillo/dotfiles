@@ -58,7 +58,6 @@ PanelWindow {
                 icon: Icons.arch
                 iconSize: 16
                 color: Theme.mauve
-                onRight: "pkill fuzzel || ~/.config/scripts/launcher --list-executables-in-path"
                 onLeftClicked: ShellState.toggle("launcher")
             }
         }
@@ -149,7 +148,6 @@ PanelWindow {
                 color: Theme.mauve
                 onLeftClicked: ShellState.toggle("clipboard")
                 onMiddle: "rm -f ~/.cache/cliphist/db"
-                onRight: "~/.config/scripts/clipboard delete"
             }
             BarItem {
                 icon: Notifs.dnd ? Icons.bellDnd : Icons.bell
@@ -201,7 +199,6 @@ PanelWindow {
                 iconSize: 15
                 color: Theme.red
                 onLeftClicked: ShellState.toggle("power")
-                onRight: "~/.config/wlogout/launch.sh"
             }
         }
     }

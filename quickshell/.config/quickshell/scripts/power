@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Session actions for the island's power view (PowerView.qml).
+# No confirmation here: the island already asks for a second click on the
+# destructive ones (logout, reboot, shutdown).
+
+case "$1" in
+    lock)
+        ~/.scripts/lock
+        ;;
+    suspend)
+        playerctl --all-players stop
+        ~/.scripts/lock
+        sleep 0.5
+        systemctl suspend
+        ;;
+    hibernate)
+        playerctl --all-players stop
+        ~/.scripts/lock
+        sleep 0.5
+        systemctl suspend-then-hibernate
+        ;;
+    logout)
+        hyprctl dispatch 'hl.dsp.exit()'
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "usage: power lock|suspend|hibernate|logout|reboot|shutdown" >&2
+        exit 1
+        ;;
+esac

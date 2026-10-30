@@ -18,6 +18,5 @@ swaylock-effects-git
 ttf-twemoji-color
 tty-clock-git
 vscodium-bin-marketplace
-wlogout
 zen-browser-bin
 zoom

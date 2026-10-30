@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
 # Read by ~/.config/hypr/configs/cleanmode.lua on every config load,
-# and by launch_waybar / launch_swaync to pick the solid (no blur) style
+# and by the quickshell bar/island (Theme.qml) to switch to solid glass
 FLAG="/tmp/hypr_cleanmode"
 
 if [ -f "$FLAG" ]; then
     rm "$FLAG"
     state="Off"
+    clean=false
 else
     touch "$FLAG"
     state="On"
+    clean=true
 fi
 
 hyprctl reload config-only
-# swaync first: waybar's notification module subscribes to it on start
-systemctl --user restart swaync
-~/.config/scripts/launch_waybar
+qs ipc call theme setClean "$clean" >/dev/null
 notify-send -a hyprland "Clean mode" "$state"

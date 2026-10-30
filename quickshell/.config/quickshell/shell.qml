@@ -5,4 +5,5 @@ ShellRoot {
     Bar {}
     DismissLayer {}
     Island {}
+    EmojiPicker {}
 }

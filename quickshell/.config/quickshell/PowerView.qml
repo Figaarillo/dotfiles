@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 
-// Same actions as wlogout. Logout/reboot/shutdown need a second click to
+// Session actions (scripts/power). Logout/reboot/shutdown need a second click to
 // confirm, so a stray click never kills the session.
 IslandView {
     id: root
@@ -29,7 +29,7 @@ IslandView {
             return;
         }
         ShellState.close();
-        Quickshell.execDetached(["sh", "-c", `~/.config/wlogout/actions ${item.action}`]);
+        Quickshell.execDetached([`${Quickshell.shellDir}/scripts/power`, item.action]);
     }
 
     Timer { id: disarm; interval: 3000; onTriggered: root.armed = "" }

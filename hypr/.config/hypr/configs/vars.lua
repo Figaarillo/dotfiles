@@ -12,8 +12,6 @@ return {
     explorer     = "nemo",
     explorer2    = "nautilus",
     gmail        = "geary",
-    launcher     = home .. "/.config/scripts/launcher",
-    launcher_alt = home .. "/.config/scripts/launcher --list-executables-in-path",
     music        = "spotify",
     notepad      = "geany",
     office       = "onlyoffice",

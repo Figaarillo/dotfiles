@@ -1,9 +1,28 @@
 pragma Singleton
 import QtQuick
 import Quickshell
+import Quickshell.Io
 
 // Catppuccin Mocha, same palette as waybar/style.css
 Singleton {
+    id: root
+
+    // Clean mode (SUPER+ALT+Z, ~/.scripts/hyprland_toggle_opacity) turns blur
+    // off; glass would be see-through without it, so tints go solid.
+    property bool clean: false
+
+    FileView {
+        path: "/tmp/hypr_cleanmode"
+        printErrors: false
+        onLoaded: root.clean = true
+        onLoadFailed: root.clean = false
+    }
+
+    IpcHandler {
+        target: "theme"
+        function setClean(value: bool): void { root.clean = value; }
+    }
+
     readonly property color base: "#1e1e2e"
     readonly property color mantle: "#181825"
     readonly property color crust: "#11111b"
@@ -23,14 +42,14 @@ Singleton {
     readonly property color pink: "#f5c2e7"
     readonly property color flamingo: "#f2cdcd"
 
-    readonly property color glass: Qt.rgba(30 / 255, 30 / 255, 46 / 255, 0.50)
+    readonly property color glass: Qt.rgba(30 / 255, 30 / 255, 46 / 255, clean ? 0.97 : 0.50)
     readonly property color glassBorder: Qt.rgba(1, 1, 1, 0.10)
     readonly property color glassHover: Qt.rgba(1, 1, 1, 0.12)
     readonly property color glassShine: Qt.rgba(1, 1, 1, 0.16)
 
     // Liquid glass: translucent tint + compositor blur + specular sheen.
     // The island is a bit denser than the bar so expanded content stays legible.
-    readonly property color islandBg: Qt.rgba(24 / 255, 24 / 255, 37 / 255, 0.58)
+    readonly property color islandBg: Qt.rgba(24 / 255, 24 / 255, 37 / 255, clean ? 0.98 : 0.58)
     readonly property color islandBorder: Qt.rgba(1, 1, 1, 0.14)
     // Inner controls (rows, buttons, slider tracks) sitting on the island
     readonly property color glassCard: Qt.rgba(1, 1, 1, 0.06)
