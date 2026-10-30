@@ -30,7 +30,7 @@ PanelWindow {
     WlrLayershell.keyboardFocus: ShellState.interactive ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
     // ---- view registry: adding a view = one file + one entry here ----
-    readonly property var views: [media, player, launcher, clipboard, controls, network, bluetooth, traymenu, notifications, notification, calendar, power, wallpaper, stats, share, osd]
+    readonly property var views: [media, player, launcher, clipboard, controls, network, bluetooth, traymenu, notifications, notification, calendar, power, wallpaper, stats, share, emoji, osd]
     readonly property var activeView: views.find(v => v.current) ?? media
 
     Connections {
@@ -71,7 +71,7 @@ PanelWindow {
         height: window.activeView.preferredHeight
         radius: ShellState.expanded ? Math.min(26, height / 2) : height / 2
 
-        tint: Theme.islandBg
+        tint: window.activeView.solid ? Theme.islandSolid : Theme.islandBg
         rim: Theme.islandBorder
         clip: true
 
@@ -105,6 +105,7 @@ PanelWindow {
             WallpaperView { id: wallpaper; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             StatsView { id: stats; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             ShareView { id: share; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
+            EmojiView { id: emoji; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             OsdView { id: osd; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
         }
     }

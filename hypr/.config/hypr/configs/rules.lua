@@ -224,7 +224,7 @@ rule({
 
 -- ==================== LAYER RULES ==================== --
 -- See https://wiki.hypr.land/configuring/core/rules/layer-rules/
-for _, ns in ipairs({ "gtk-layer-shell", "quickshell-bar", "quickshell-island", "quickshell-emoji" }) do
+for _, ns in ipairs({ "gtk-layer-shell", "quickshell-bar", "quickshell-island" }) do
     hl.layer_rule({ name = "blur-" .. ns, match = { namespace = "^" .. ns .. "$" }, blur = true, ignore_alpha = 0 })
 end
 

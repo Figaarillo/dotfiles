@@ -10,6 +10,8 @@ Item {
     property string mode
     property int preferredWidth: 400
     property int preferredHeight: 200
+    // Solid tint instead of glass while this view is open
+    property bool solid: false
 
     readonly property bool current: ShellState.islandMode === mode
 

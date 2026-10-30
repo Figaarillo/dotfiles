@@ -43,7 +43,7 @@ bind("Print",             exec(scripts .. "/screenshot_full"))
 
 
 -- ###################### EMOJI BINDS ###################### --
-bind("SUPER + period", exec("qs ipc call emoji toggle"))
+bind("SUPER + period", exec("qs ipc call island toggle emoji"))
 
 
 -- ###################### COLOR PICKER ##################### --
