@@ -11,6 +11,8 @@ Item {
     property color color: Theme.text
     property int iconSize: Theme.fontSize + 1
     property bool bold: false
+    // Icon only at rest; the label slides out while hovered
+    property bool revealOnHover: false
 
     property string onLeft: ""
     property string onRight: ""
@@ -27,10 +29,11 @@ Item {
         if (cmd) Quickshell.execDetached(["sh", "-c", cmd]);
     }
 
+    HoverHandler { id: hover }
+
     Row {
         id: content
         anchors.verticalCenter: parent.verticalCenter
-        spacing: 5
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
@@ -41,14 +44,30 @@ Item {
             font.pixelSize: root.iconSize
         }
 
-        Text {
+        // Clipped box animating its width, so a hidden label takes no space
+        // at all (the icon gap lives inside it too)
+        Item {
+            id: labelBox
+            readonly property bool shown: !root.revealOnHover || hover.hovered
+
             anchors.verticalCenter: parent.verticalCenter
             visible: root.label !== ""
-            text: root.label
-            color: root.color
-            font.family: Theme.font
-            font.pixelSize: Theme.fontSize
-            font.bold: root.bold
+            width: shown ? labelText.implicitWidth + (root.icon !== "" ? 5 : 0) : 0
+            height: labelText.implicitHeight
+            clip: true
+            Behavior on width { NumberAnimation { duration: 220; easing.type: Easing.OutCubic } }
+
+            Text {
+                id: labelText
+                x: root.icon !== "" ? 5 : 0
+                text: root.label
+                color: root.color
+                font.family: Theme.font
+                font.pixelSize: Theme.fontSize
+                font.bold: root.bold
+                opacity: labelBox.shown ? 1 : 0
+                Behavior on opacity { NumberAnimation { duration: 180 } }
+            }
         }
     }
 

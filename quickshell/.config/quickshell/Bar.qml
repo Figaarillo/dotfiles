@@ -93,6 +93,7 @@ PanelWindow {
                 icon: Icons.keyboard
                 iconSize: Theme.fontSize + 4
                 label: Keyboard.label
+                revealOnHover: true
                 color: Theme.lavender
                 onLeftClicked: Keyboard.next()
             }
@@ -101,6 +102,7 @@ PanelWindow {
                 iconSize: Theme.fontSize + 4
                 icon: bar.wifiNetwork ? Icons.level(Icons.wifi, bar.wifiNetwork.signalStrength)
                     : bar.wired ? Icons.ethernet : Icons.disconnected
+                revealOnHover: !!bar.wifiNetwork // keep "No Internet" always visible
                 label: bar.wifiNetwork ? `${Math.round(bar.wifiNetwork.signalStrength * 100)}%`
                     : bar.wired ? "" : "No Internet"
                 color: bar.wifiNetwork || bar.wired ? Theme.blue : Theme.overlay1
