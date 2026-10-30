@@ -125,7 +125,8 @@ PanelWindow {
         width: root.columns * root.cell + 24
         height: 52 + 6 * root.cell + 16
         radius: 22
-        tint: Theme.islandBg
+        // Always solid: it opens over whatever you're typing in, often text
+        tint: Theme.islandSolid
         rim: Theme.islandBorder
 
         // Next to the pointer, flipped above it near the bottom edge

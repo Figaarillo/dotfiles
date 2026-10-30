@@ -49,7 +49,9 @@ Singleton {
 
     // Liquid glass: translucent tint + compositor blur + specular sheen.
     // The island is a bit denser than the bar so expanded content stays legible.
-    readonly property color islandBg: Qt.rgba(24 / 255, 24 / 255, 37 / 255, clean ? 0.98 : 0.58)
+    // Solid island tint: clean mode, and surfaces that sit over busy content
+    readonly property color islandSolid: Qt.rgba(24 / 255, 24 / 255, 37 / 255, 0.98)
+    readonly property color islandBg: clean ? islandSolid : Qt.rgba(24 / 255, 24 / 255, 37 / 255, 0.58)
     readonly property color islandBorder: Qt.rgba(1, 1, 1, 0.14)
     // Inner controls (rows, buttons, slider tracks) sitting on the island
     readonly property color glassCard: Qt.rgba(1, 1, 1, 0.06)
