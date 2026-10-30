@@ -91,7 +91,7 @@ PanelWindow {
             BarItem {
                 // Keyboard layout (ALT+Space); click switches it too
                 icon: Icons.keyboard
-                iconSize: Theme.fontSize + 4
+                iconSize: Theme.fontSize + 6
                 label: Keyboard.label
                 revealOnHover: true
                 color: Theme.lavender
@@ -99,7 +99,7 @@ PanelWindow {
             }
             BarItem {
                 // Material glyphs are drawn smaller inside their box than the others
-                iconSize: Theme.fontSize + 4
+                iconSize: Theme.fontSize + 6
                 icon: bar.wifiNetwork ? Icons.level(Icons.wifi, bar.wifiNetwork.signalStrength)
                     : bar.wired ? Icons.ethernet : Icons.disconnected
                 revealOnHover: !!bar.wifiNetwork // keep "No Internet" always visible
