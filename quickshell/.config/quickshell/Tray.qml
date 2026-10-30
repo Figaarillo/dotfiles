@@ -1,4 +1,6 @@
 import QtQuick
+import Quickshell
+import Quickshell.Io
 import Quickshell.Services.SystemTray
 import Quickshell.Widgets
 
@@ -25,6 +27,17 @@ Row {
             implicitSize: 15
             source: modelData.icon
 
+            // Left click: Activate, falling back to the menu when the item
+            // doesn't handle it (AppIndicator apps like Spotify or Steam,
+            // whose "show window" lives in the menu)
+            Process {
+                id: activator
+                command: [`${Quickshell.shellDir}/scripts/tray-activate`, trayIcon.modelData.id]
+                onExited: code => {
+                    if (code !== 0 && trayIcon.modelData.hasMenu) ShellState.openTrayMenu(trayIcon.modelData);
+                }
+            }
+
             MouseArea {
                 anchors.fill: parent
                 anchors.margins: -4
@@ -34,7 +47,7 @@ Row {
                     const item = trayIcon.modelData;
                     if (mouse.button === Qt.LeftButton) {
                         if (item.onlyMenu && item.hasMenu) ShellState.openTrayMenu(item);
-                        else item.activate();
+                        else activator.running = true;
                     } else if (mouse.button === Qt.RightButton) {
                         if (item.hasMenu) ShellState.openTrayMenu(item);
                     } else {

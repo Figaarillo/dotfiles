@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Activate a tray item by its StatusNotifierItem Id (Tray.qml, left click).
+# Quickshell's activate() can't report failure to QML, and AppIndicator items
+# (Spotify, Steam...) expose Activate but answer "No handler for Activate".
+# Exit codes: 0 activated, 2 the item doesn't handle Activate, 3 not found.
+id="$1"
+
+items=$(busctl --user get-property org.kde.StatusNotifierWatcher /StatusNotifierWatcher \
+    org.kde.StatusNotifierWatcher RegisteredStatusNotifierItems | grep -o '"[^"]*"' | tr -d '"')
+
+for it in $items; do
+    svc=${it%%/*}
+    obj=/${it#*/}
+    [ "$obj" = "/$svc" ] && obj=/StatusNotifierItem # registered by bus name only
+    got=$(busctl --user get-property "$svc" "$obj" org.kde.StatusNotifierItem Id 2>/dev/null | cut -d'"' -f2)
+    [ "$got" = "$id" ] || continue
+    busctl --user call "$svc" "$obj" org.kde.StatusNotifierItem Activate ii 0 0 >/dev/null 2>&1 && exit 0
+    exit 2
+done
+exit 3
