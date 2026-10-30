@@ -30,7 +30,7 @@ PanelWindow {
     WlrLayershell.keyboardFocus: ShellState.interactive ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
     // ---- view registry: adding a view = one file + one entry here ----
-    readonly property var views: [media, player, launcher, clipboard, controls, network, bluetooth, traymenu, notifications, notification, calendar, power, wallpaper, stats, osd]
+    readonly property var views: [media, player, launcher, clipboard, controls, network, bluetooth, traymenu, notifications, notification, calendar, power, wallpaper, stats, share, osd]
     readonly property var activeView: views.find(v => v.current) ?? media
 
     Connections {
@@ -51,6 +51,10 @@ PanelWindow {
         function toggle(mode: string): void { ShellState.toggle(mode); }
         function toggleLauncher(): void { ShellState.toggle("launcher"); }
         function closeAll(): void { ShellState.close(); }
+        // Called by scripts/share-picker (XDPH custom_picker_binary)
+        function pickShare(windows: string, fifo: string, allowToken: bool): void {
+            share.begin(windows, fifo, allowToken);
+        }
         function osd(kind: string): void {
             if (kind === "brightness") SysInfo.refreshBacklight();
             ShellState.osd(kind);
@@ -100,6 +104,7 @@ PanelWindow {
             PowerView { id: power; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             WallpaperView { id: wallpaper; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             StatsView { id: stats; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
+            ShareView { id: share; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
             OsdView { id: osd; anchors { top: parent.top; horizontalCenter: parent.horizontalCenter } }
         }
     }

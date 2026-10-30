@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Screen share picker for xdg-desktop-portal-hyprland, rendered by the
+# Quickshell island (ShareView). Contract, from XDPH's ScreencopyShared.cpp:
+#   in:  $XDPH_WINDOW_SHARING_LIST, optional --allow-token
+#   out: "[SELECTION]<flags>/<screen:NAME|window:HANDLE|region:OUT@X,Y,W,H>\n"
+#        no [SELECTION] line = cancelled. The trailing newline is required:
+#        XDPH pop_back()s it off the screen name.
+# Falls back to the stock picker whenever the island can't answer.
+
+allow=false
+[ "$1" = "--allow-token" ] && allow=true
+
+fifo=$(mktemp -u "${XDG_RUNTIME_DIR:-/tmp}/qs-share.XXXXXX")
+mkfifo -m 600 "$fifo" || exec hyprland-share-picker "$@"
+# The island writes to the path, so it must exist until we exit
+trap 'rm -f "$fifo"' EXIT
+
+if ! qs ipc call island pickShare "$XDPH_WINDOW_SHARING_LIST" "$fifo" "$allow" >/dev/null 2>&1; then
+    rm -f "$fifo"
+    exec hyprland-share-picker "$@"
+fi
+
+# Open read-write so opening never blocks, then wait (bounded) for the answer
+exec 3<>"$fifo"
+read -r -t 300 answer <&3 || exit 1
+[ -n "$answer" ] || exit 1
+
+printf '[SELECTION]%s\n' "$answer"
