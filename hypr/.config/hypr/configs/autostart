@@ -7,19 +7,24 @@
 # ######################## VARIABLES ######################## #
 scripts=~/.scripts
 
-# ##################### Reset XDG Portal #################### #
-$scripts/reset_xdg_portal.sh
+# Order matters here: env -> pipewire -> portals. The Hyprland portal connects
+# to pipewire once at startup and never reconnects, so restarting pipewire
+# after it left screen capture (OBS, Discord) black until the portal restarted.
+# Nothing is backgrounded so each step finishes before the next one.
 
 # ####################### WAYLAND ENV ####################### #
 # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
 # https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # ###################### Pipewire Setup ##################### #
 # Restart pipewire to avoid bugs
 systemctl --user restart pipewire
-systemctl --user restart wireplumber &
+systemctl --user restart wireplumber
+
+# ##################### Reset XDG Portal #################### #
+$scripts/reset_xdg_portal.sh
 
 # ###################### LAUNCH POLKIT ###################### #
 # Policy Authentication Agent for GUI applications
