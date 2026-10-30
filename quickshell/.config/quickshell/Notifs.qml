@@ -1,6 +1,7 @@
 pragma Singleton
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import Quickshell.Services.Notifications
 
 // Notification server (replaces swaync). Keeps the history the center view
@@ -8,7 +9,17 @@ import Quickshell.Services.Notifications
 Singleton {
     id: root
 
+    // Persisted so do-not-disturb survives reloads and logins
     property bool dnd: false
+    onDndChanged: if (dndLoaded) dndFile.setText(dnd ? "1" : "0")
+    property bool dndLoaded: false
+
+    FileView {
+        id: dndFile
+        path: Quickshell.statePath("notifications-dnd")
+        blockLoading: true
+        printErrors: false // missing until the first toggle
+    }
     // Newest first. Entries wrap the notification with its arrival time,
     // since the spec has no timestamp.
     property var items: []
@@ -17,6 +28,12 @@ Singleton {
     // Entry the toast is showing
     property var popup: null
     property bool popupHeld: false
+
+    IpcHandler {
+        target: "notifications"
+        function toggleDnd(): void { root.dnd = !root.dnd; }
+        function isDnd(): bool { return root.dnd; }
+    }
 
     NotificationServer {
         id: server
@@ -30,6 +47,9 @@ Singleton {
 
     // After a config reload the server keeps its notifications; rebuild the list
     Component.onCompleted: {
+        dndFile.reload();
+        dnd = dndFile.text().trim() === "1";
+        dndLoaded = true;
         for (const n of server.trackedNotifications.values) track(n, Date.now());
         items = server.trackedNotifications.values.map(n => ({ n, time: Date.now() }));
     }
@@ -49,7 +69,8 @@ Singleton {
 
     function remove(n) {
         items = items.filter(e => e.n !== n);
-        if (popup?.n === n) endPopup();
+        // Already closed: end the toast without trying to close it again
+        if (popup?.n === n) endPopup(false);
     }
 
     function dismiss(n) { n.dismiss(); }
@@ -59,11 +80,13 @@ Singleton {
         items = [];
     }
 
-    // Clicking a notification = its "default" action, like most daemons
+    // Clicking a notification = its "default" action, like most daemons.
+    // invoke() already closes non-resident notifications (and resident ones
+    // must stay), so only dismiss when there's no action to run.
     function activate(n) {
         const action = n.actions.find(a => a.identifier === "default");
         if (action) action.invoke();
-        n.dismiss();
+        else n.dismiss();
         ShellState.close();
     }
 
@@ -104,13 +127,13 @@ Singleton {
         popupTimer.restart();
     }
 
-    function endPopup() {
+    function endPopup(expireTransient = true) {
         const entry = popup;
         popup = null;
         popupTimer.stop();
         if (ShellState.islandMode === "notification") ShellState.close();
         // Transient notifications don't belong in the history
-        if (entry?.n?.transient) entry.n.expire();
+        if (expireTransient && entry?.n?.transient) entry.n.expire();
     }
 
     // Hovering the toast keeps it open

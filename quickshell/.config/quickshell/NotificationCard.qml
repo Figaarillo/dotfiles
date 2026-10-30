@@ -125,8 +125,8 @@ GlassSurface {
                     radius: 10
                     label: modelData.text
                     onClicked: {
+                        // invoke() closes non-resident notifications by itself
                         modelData.invoke();
-                        root.n.dismiss();
                     }
                     TextMetrics { id: metrics; text: modelData.text; font.family: Theme.font; font.pixelSize: Theme.fontSize - 2 }
                 }
