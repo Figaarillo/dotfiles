@@ -16,6 +16,20 @@ IslandView {
 
     property string fifo: ""
     property bool allowToken: false
+
+    // "Recordar esta selección" is a user preference: persist it, since XDPH
+    // only passes --allow-token when allow_token_by_default is set.
+    FileView {
+        id: rememberPref
+        path: Quickshell.statePath("share-remember")
+        blockLoading: true
+        printErrors: false // missing until the first toggle
+    }
+
+    function setAllowToken(value) {
+        allowToken = value;
+        rememberPref.setText(value ? "1" : "0");
+    }
     property string tab: "screen"
     property var windows: []
     // slurp needs the island out of the way without cancelling the request
@@ -30,7 +44,8 @@ IslandView {
             return { handle, cls, title, address: Number(address).toString(16) };
         });
         fifo = fifoPath;
-        allowToken = allow;
+        rememberPref.reload();
+        allowToken = allow || rememberPref.text().trim() === "1";
         tab = "screen";
         selectingRegion = false;
         ShellState.islandMode = "share";
@@ -189,7 +204,7 @@ IslandView {
                 GlassSwitch {
                     anchors.verticalCenter: parent.verticalCenter
                     checked: root.allowToken
-                    onToggled: root.allowToken = !root.allowToken
+                    onToggled: root.setAllowToken(!root.allowToken)
                 }
                 Text {
                     anchors.verticalCenter: parent.verticalCenter

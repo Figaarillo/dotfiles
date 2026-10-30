@@ -10,19 +10,27 @@
 allow=false
 [ "$1" = "--allow-token" ] && allow=true
 
+# One line per request, so a "clicked but nothing was shared" report can be
+# traced to what the picker actually answered. Cleared on reboot.
+log="${XDG_RUNTIME_DIR:-/tmp}/share-picker.log"
+note() { printf '%s %s\n' "$(date +%T)" "$*" >> "$log"; }
+note "request allow=$allow windows=$(grep -o '\[HA>\]' <<< "$XDPH_WINDOW_SHARING_LIST" | wc -l)"
+
 fifo=$(mktemp -u "${XDG_RUNTIME_DIR:-/tmp}/qs-share.XXXXXX")
 mkfifo -m 600 "$fifo" || exec hyprland-share-picker "$@"
 # The island writes to the path, so it must exist until we exit
 trap 'rm -f "$fifo"' EXIT
 
 if ! qs ipc call island pickShare "$XDPH_WINDOW_SHARING_LIST" "$fifo" "$allow" >/dev/null 2>&1; then
+    note "island unreachable, falling back to hyprland-share-picker"
     rm -f "$fifo"
     exec hyprland-share-picker "$@"
 fi
 
 # Open read-write so opening never blocks, then wait (bounded) for the answer
 exec 3<>"$fifo"
-read -r -t 300 answer <&3 || exit 1
-[ -n "$answer" ] || exit 1
+read -r -t 300 answer <&3 || { note "timeout"; exit 1; }
+[ -n "$answer" ] || { note "cancelled"; exit 1; }
+note "answer $answer"
 
 printf '[SELECTION]%s\n' "$answer"
