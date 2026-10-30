@@ -19,7 +19,7 @@ IslandView {
         // Browsers put the video title in the window title. Whitespace is
         // normalized: MPRIS and the window title don't always agree on it.
         const norm = text => text.replace(/\s+/g, " ").trim();
-        const title = norm(player?.trackTitle ?? "").slice(0, 30);
+        const title = norm(Media.title(player)).slice(0, 30);
         if (!title || player.dbusName.endsWith(".spotify")) return null; // has album art
         return Hyprland.toplevels.values.find(t => norm(t.title).includes(title)) ?? null;
     }
@@ -62,7 +62,7 @@ IslandView {
 
         Image {
             anchors.fill: parent
-            source: root.player?.trackArtUrl ?? ""
+            source: Media.art(root.player)
             fillMode: Image.PreserveAspectCrop
             asynchronous: true
             sourceSize.width: 248
@@ -70,7 +70,7 @@ IslandView {
 
         Text {
             anchors.centerIn: parent
-            visible: !root.player?.trackArtUrl
+            visible: !Media.art(root.player)
             text: Icons.music
             color: Theme.overlay1
             font.family: Theme.font
@@ -141,7 +141,7 @@ IslandView {
 
         Text {
             width: parent.width
-            text: root.player?.trackTitle || "Nada sonando"
+            text: Media.title(root.player) || "Nada sonando"
             color: Theme.text
             font.family: Theme.font
             font.pixelSize: Theme.fontSize + 3
@@ -151,7 +151,7 @@ IslandView {
 
         Text {
             width: parent.width
-            text: root.player?.trackArtist || root.player?.identity || ""
+            text: Media.artist(root.player) || root.player?.identity || ""
             color: Theme.subtext0
             font.family: Theme.font
             font.pixelSize: Theme.fontSize
