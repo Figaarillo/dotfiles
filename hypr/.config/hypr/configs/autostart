@@ -44,8 +44,8 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 
 # ###################### START DAEMONS ###################### #
-# waybar daemon
-sleep 1 && $scripts/launch_waybar &
+# quickshell: bar + dynamic island (replaces waybar; fallback: $scripts/launch_waybar)
+sleep 1 && qs -d &
 $scripts/dynamic &
 # music daemon
 mpd &

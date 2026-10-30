@@ -68,9 +68,9 @@ bind("SUPER + SHIFT + O", exec("obsidian"))
 
 -- ############# LAUNCHER AND NOTIFICATION BINDS ############# --
 bind("SUPER + V",     exec(scripts .. "/clipboard"))
-bind("SUPER + N",     exec("swaync-client -t -sw"))
--- Tap SUPER alone to open the launcher
-bind("Super_L",       exec("pkill fuzzel || " .. v.launcher), { release = true })
+bind("SUPER + N",     exec("qs ipc call island toggle notifications"))
+-- Tap SUPER alone to open the launcher (quickshell dynamic island)
+bind("Super_L",       exec("qs ipc call island toggleLauncher"), { release = true })
 bind("SUPER + space", exec("pkill fuzzel || " .. v.launcher_alt))
 
 
@@ -91,9 +91,9 @@ bind("SUPER + SHIFT + G", dsp.group.toggle())
 bind("SUPER + CTRL + tab", dsp.group.next())
 
 
--- ##################### RELOAD WAYBAR ##################### --
-bind("SUPER + SHIFT + R", exec(scripts .. "/launch_waybar"))
-bind("SUPER + ALT + R",   exec("killall -SIGUSR1 waybar")) -- Hide waybar
+-- ################### RELOAD QUICKSHELL BAR ################### --
+bind("SUPER + SHIFT + R", exec("qs kill; qs -d"))
+bind("SUPER + ALT + R",   exec("qs ipc call bar toggle")) -- Hide bar
 
 
 -- ############### LOGOUT SCREEN, LOCK, EXIT ############### --
@@ -159,8 +159,9 @@ bind("XF86AudioPrev",  exec("playerctl previous"),   { repeating = true })
 bind("XF86AudioNext",  exec("playerctl next"),       { repeating = true })
 
 -- Brightness Control
-bind("XF86MonBrightnessUp",   exec("brightnessctl set 5%+"), { repeating = true })
-bind("XF86MonBrightnessDown", exec("brightnessctl set 5%-"), { repeating = true })
+-- The island polls brightness every 2s; the ipc call shows its OSD instantly
+bind("XF86MonBrightnessUp",   exec("brightnessctl -q set 5%+ && qs ipc call island osd brightness"), { repeating = true })
+bind("XF86MonBrightnessDown", exec("brightnessctl -q set 5%- && qs ipc call island osd brightness"), { repeating = true })
 
 -- Screensaver key
 bind("XF86ScreenSaver", exec("~/.scripts/lock"), { locked = true })
@@ -172,7 +173,7 @@ bind("XF86PowerOff", exec("~/.scripts/lock"))
 bind("XF86Mail",       exec(v.gmail))
 bind("XF86HomePage",   exec(v.explorer .. " ~/"))
 bind("XF86Calculator", exec("qalculate-gtk"))
-bind("XF86Search",     exec(v.launcher))
+bind("XF86Search",     exec("qs ipc call island toggleLauncher"))
 
 
 -- ######################## SWITCHES ####################### --
