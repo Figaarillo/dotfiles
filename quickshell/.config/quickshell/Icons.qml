@@ -60,6 +60,7 @@ Singleton {
     readonly property string settings: g(0xF0493)
     readonly property string close: g(0xF0156)
     readonly property string crop: g(0xF019E)
+    readonly property string keyboard: g(0xF030C)
 
     // Picks the icon for a 0..1 level from an ordered list
     function level(list, value) {

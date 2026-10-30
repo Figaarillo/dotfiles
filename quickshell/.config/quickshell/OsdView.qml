@@ -10,8 +10,10 @@ IslandView {
     preferredHeight: Theme.collapsedHeight
 
     readonly property string kind: ShellState.osdKind
+    readonly property bool isLayout: kind === "layout"
 
-    readonly property string icon: kind === "brightness" ? Icons.level(Icons.backlight, SysInfo.brightness)
+    readonly property string icon: isLayout ? Icons.keyboard
+        : kind === "brightness" ? Icons.level(Icons.backlight, SysInfo.brightness)
         : kind === "mic" ? (Audio.isMuted(Audio.source) ? Icons.micMuted : Icons.mic)
         : Audio.sinkIcon()
     readonly property real value: kind === "brightness" ? SysInfo.brightness
@@ -19,7 +21,7 @@ IslandView {
         : (Audio.sink?.audio?.volume ?? 0)
     readonly property bool muted: kind === "mic" ? Audio.isMuted(Audio.source)
         : kind === "volume" ? Audio.isMuted(Audio.sink) : false
-    readonly property color accent: kind === "brightness" ? Theme.teal : Theme.mauve
+    readonly property color accent: isLayout ? Theme.lavender : kind === "brightness" ? Theme.teal : Theme.mauve
 
     Text {
         id: glyph
@@ -30,7 +32,18 @@ IslandView {
         font.pixelSize: 14
     }
 
+    Text {
+        visible: root.isLayout
+        anchors { left: glyph.right; leftMargin: 12; right: percent.left; rightMargin: 12; verticalCenter: parent.verticalCenter }
+        text: Keyboard.keymap
+        color: Theme.text
+        font.family: Theme.font
+        font.pixelSize: Theme.fontSize - 1
+        elide: Text.ElideRight
+    }
+
     GlassSurface {
+        visible: !root.isLayout
         anchors {
             left: glyph.right; leftMargin: 12
             right: percent.left; rightMargin: 12
@@ -54,7 +67,7 @@ IslandView {
     Text {
         id: percent
         anchors { right: parent.right; rightMargin: 14; verticalCenter: parent.verticalCenter }
-        text: root.muted ? "Mute" : `${Math.round(root.value * 100)}%`
+        text: root.isLayout ? Keyboard.label : root.muted ? "Mute" : `${Math.round(root.value * 100)}%`
         color: Theme.subtext1
         font.family: Theme.font
         font.pixelSize: Theme.fontSize - 1
