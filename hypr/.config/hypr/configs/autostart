@@ -90,10 +90,8 @@ notify-send -a aurora "Welcome $(whoami)" "Hyprland optimized config loaded" &
 libinput-gestures-setup start &
 
 # ############### PERFORMANCE OPTIMIZATIONS ############### #
-echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
-
-# Reduce swappiness para mejor performance con 12GB RAM
-sudo sysctl -q vm.swappiness=10
+# CPU governor: handled on demand by game mode (SUPER+SHIFT+G -> gamemoded).
+# Swappiness: 180 in /etc/sysctl.d/99-vm-zram.conf (high is correct for zram, don't lower it).
 
 # NUEVO: Preload aplicaciones frecuentes (OPCIONAL - usa RAM)
 preload &
