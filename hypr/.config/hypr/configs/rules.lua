@@ -109,7 +109,13 @@ rule({ name = "brave-idle",     match = { class = "^(Brave-browser)$" }, idle_in
 
 -- ==================== BLUETOOTH ==================== --
 -- rule({ name = "blueman-float", match = { class = "^(blueman)$" }, float = true, opacity = "0.94 0.94" })
--- rule({ name = "blueman-mgr-float", match = { class = "^(blueman-manager)$" }, float = true })
+rule({
+    name      = "blueman-mgr-float",
+    match     = { class = "^(blueman-manager)$" },
+    float     = true,
+    size      = { 530, 360 }, -- 530 = GTK minimum width of the toolbar; fits ~4 devices
+    center    = true,
+})
 
 
 -- ==================== AMBEROL ==================== --
