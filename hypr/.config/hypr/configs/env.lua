@@ -39,3 +39,9 @@ hl.env("EGL_PLATFORM", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 hl.env("OZONE_PLATFORM", "wayland")
+
+
+-- ######################### DEBUGGING ####################### --
+-- Disable Hyprland's crash reporter so systemd-coredump captures
+-- a full core dump (inspect with: coredumpctl info Hyprland)
+hl.env("HYPRLAND_NO_CRASHREPORTER", "1")
