@@ -70,7 +70,6 @@ local opacity = {
     { "vscode-opacity",     "^(Code)$",          "0.97 0.97" },
     { "vscodium-opacity",   "^(vscodium)$",      "0.97 0.97" },
     { "kitty-opacity",      "^(kitty)$",         "0.96 0.96" },
-    -- { "telegram",        "^(telegram)$",      "0.9 0.9" },
     { "neovide-opacity",    "^(neovide)$",       "0.95 0.95" },
     { "thunar-opacity",     "^(thunar)$",        "0.95 0.95" },
     { "nemo-opacity",       "^(nemo)$",          "0.95 0.95" },
@@ -108,7 +107,6 @@ rule({ name = "brave-idle",     match = { class = "^(Brave-browser)$" }, idle_in
 
 
 -- ==================== BLUETOOTH ==================== --
--- rule({ name = "blueman-float", match = { class = "^(blueman)$" }, float = true, opacity = "0.94 0.94" })
 rule({
     name      = "blueman-mgr-float",
     match     = { class = "^(blueman-manager)$" },
@@ -143,10 +141,6 @@ rule({
 rule({ name = "lxappearance-float", match = { class = "^(Lxappearance)$" }, float = true })
 rule({ name = "nemo-props-float",   match = { class = "^(nemo)$", title = "^(.*Properties)$" }, float = true })
 rule({ name = "nemo-preview-float", match = { class = "^(Nemo-preview-start)$" }, float = true })
--- rule({ name = "rlr-float",       match = { class = "^(rlr)$" }, float = true })
--- rule({ name = "nm-conn-ed-float", match = { class = "^(nm-connection-editor)$" }, float = true })
--- rule({ name = "gparted-float",   match = { class = "^(GParted)$" }, float = true })
--- rule({ name = "qimgv-float",     match = { class = "^(qimgv)$" }, float = true, center = true })
 
 
 -- ==================== BASIC WINDOWS ==================== --
@@ -172,8 +166,6 @@ local dialogs = {
     { "confirm-replace",  { title = "^(Confirm to replace files)$" } },
     { "file-op-progress", { title = "^(File Operation Progress)$" } },
     { "viewnior",         { class = "^(Viewnior)$" } },
-    -- { "feh-float",     { class = "^(feh)$" } },
-    -- { "pavucontrol-qt", { class = "^(pavucontrol-qt)$" } },
 }
 
 for _, d in ipairs(dialogs) do
