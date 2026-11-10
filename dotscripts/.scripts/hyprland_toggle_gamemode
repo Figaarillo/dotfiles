@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Read by ~/.config/hypr/configs/gamemode.lua on every config load.
+# Visuals: flag file + config reload. CPU: holds a gamemoded request
+# (polkit, no sudo) while active; settings live in ~/.config/gamemode.ini
+FLAG="/tmp/hypr_gamemode"
+
+if [ -f "$FLAG" ]; then
+    rm "$FLAG"
+    pkill -f "gamemoded -r" 2>/dev/null
+    state="Off"
+else
+    touch "$FLAG"
+    setsid -f gamemoded -r >/dev/null 2>&1
+    state="On"
+fi
+
+hyprctl reload config-only
+notify-send -a hyprland "Game mode" "$state"

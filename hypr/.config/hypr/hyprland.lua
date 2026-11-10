@@ -136,3 +136,8 @@ require("configs.rules")
 -- ####################### CLEAN MODE ######################## --
 -- Must stay last so it overrides decorations and rules
 require("configs.cleanmode")
+
+
+-- ######################## GAME MODE ######################## --
+-- After clean mode: game mode is the stricter override
+require("configs.gamemode")

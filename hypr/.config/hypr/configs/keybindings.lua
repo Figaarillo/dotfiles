@@ -83,11 +83,12 @@ bind("SUPER + S",        dsp.window.float({ action = "toggle" }))
 -- bind("SUPER + A",     dsp.layout("togglesplit"))
 bind("SUPER + Z",        exec("~/.scripts/hyprland_toggle_animations"))
 bind("SUPER + ALT + Z",  exec("~/.scripts/hyprland_toggle_opacity"))
+bind("SUPER + SHIFT + G", exec("~/.scripts/hyprland_toggle_gamemode"))
 bind("CTRL + ALT + Delete", dsp.exit())
 
 
 -- ###################### GROUP BINDS ###################### --
-bind("SUPER + SHIFT + G", dsp.group.toggle())
+bind("SUPER + ALT + G", dsp.group.toggle())
 bind("SUPER + CTRL + tab", dsp.group.next())
 
 
